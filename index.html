@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turning Point Studio — Enterprise Architecture for the Utility Industry</title>
+<meta name="description" content="Turning Point Studio. Enterprise architecture and AI integration for utility-industry solution architects and enterprise architects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1419;
+    --ink-soft: #2d3748;
+    --paper: #faf8f3;
+    --paper-warm: #f4efe4;
+    --rule: #d4cbb8;
+    --accent: #8b3a1f;
+    --accent-soft: #b85a3a;
+    --muted: #6b7280;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding: 22px 0;
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header-row { display: flex; justify-content: space-between; align-items: center; }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .brand span { color: var(--accent); }
+  nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  nav a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero { padding: 110px 0 90px; border-bottom: 1px solid var(--rule); }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  .hero h1 { font-size: 52px; margin-bottom: 32px; }
+  .hero .lede {
+    font-size: 21px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* Sections */
+  section { padding: 88px 0; border-bottom: 1px solid var(--rule); }
+  section h2 { font-size: 34px; margin-bottom: 28px; }
+  section p { margin-bottom: 18px; color: var(--ink-soft); max-width: 680px; }
+  section p:last-child { margin-bottom: 0; }
+
+  /* Approach blocks */
+  .principles { display: grid; gap: 36px; margin-top: 40px; }
+  .principle { display: grid; grid-template-columns: 48px 1fr; gap: 24px; align-items: start; }
+  .principle .num {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 500;
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .principle h3 { font-size: 19px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 0; }
+  .principle p { font-size: 16px; margin: 0; }
+
+  /* About */
+  .credentials { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--rule); }
+  .credentials .label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .credentials .item { margin-bottom: 16px; font-size: 15px; color: var(--ink-soft); }
+
+  /* Contact */
+  .contact-card {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    padding: 44px 40px;
+    margin-top: 28px;
+  }
+  .contact-card p { max-width: none; margin-bottom: 18px; }
+  .contact-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 18px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    font-weight: 500;
+  }
+  .contact-link:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* Footer */
+  footer { padding: 40px 0 60px; font-size: 13px; color: var(--muted); }
+  .footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .hero { padding: 64px 0 56px; }
+    .hero h1 { font-size: 36px; }
+    .hero .lede { font-size: 18px; }
+    section { padding: 56px 0; }
+    section h2 { font-size: 26px; }
+    nav a { margin-left: 18px; font-size: 14px; }
+    .contact-card { padding: 28px 24px; }
+    .principle { grid-template-columns: 36px 1fr; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-row">
+    <a href="#" class="brand">Turning Point <span>Studio</span></a>
+    <nav>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <div class="eyebrow">Enterprise Architecture &middot; AI Integration</div>
+    <h1>Architecture for the utility industry, redrawn for the age of AI.</h1>
+    <p class="lede">Turning Point Studio works with solution architects and enterprise architects inside utilities — building reference patterns, integration designs, and pragmatic AI capability that fits how the industry actually operates.</p>
+  </div>
+</div>
+
+<section id="approach">
+  <div class="container">
+    <h2>Approach</h2>
+    <p>Utilities don't need another AI sales pitch. They need architecture that holds up against regulatory scrutiny, legacy integration constraints, and operations teams that have to live with the result for the next twenty years.</p>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="num">01</div>
+        <div>
+          <h3>Build first, demonstrate second</h3>
+          <p>Every offering ships only after the underlying capability is real, repeatable, and supportable. Nothing gets sold from a slide.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="num">02</div>
+        <div>
+          <h3>Opinionated reference architectures</h3>
+          <p>Strong defaults, narrow scope, clear trade-offs. The point is to remove decisions from the architect's plate — not add to them.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="num">03</div>
+        <div>
+          <h3>Domain over generality</h3>
+          <p>Utility-industry context comes first. Power, water, gas, grid modernization, regulatory boundaries, OT/IT seams. Not generic enterprise AI.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="num">04</div>
+        <div>
+          <h3>Operator-grade, not demo-grade</h3>
+          <p>Designs are evaluated against the people who run the system at 2 a.m., not the people who saw the deck.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2>About</h2>
+    <p>Turning Point Studio is led by Bob Beckman, a senior enterprise architect with deep tenure in the utility industry. The studio applies four decades of pattern recognition — what works inside utilities, what dies on contact — to the current generation of AI and architecture tooling.</p>
+    <p>The focus is narrow on purpose: the studio serves solution architects and enterprise architects working inside utilities, not the broader enterprise AI market.</p>
+
+    <div class="credentials">
+      <div class="item">
+        <div class="label">Founder</div>
+        Bob Beckman, Senior Enterprise Architect
+      </div>
+      <div class="item">
+        <div class="label">Background</div>
+        Formerly Bonneville Power Administration
+      </div>
+      <div class="item">
+        <div class="label">Studio</div>
+        Turning Point Studio LLC &middot; Pacific Northwest, USA
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>The studio is in active build phase. Engagements open as capability comes online. If you are a utility-industry architect and want to be on the short list when offerings ship, get in touch.</p>
+
+    <div class="contact-card">
+      <p>Direct inquiries only — no vendor pitches, no recruiters, no marketing lists.</p>
+      <a class="contact-link" href="mailto:beckmanbob@gmail.com?subject=Turning%20Point%20Studio%20inquiry">beckmanbob@gmail.com &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-row">
+    <div>&copy; 2026 Turning Point Studio LLC</div>
+    <div>Pacific Northwest, USA</div>
+  </div>
+</footer>
+
+</body>
+</html>
