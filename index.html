@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Turning Point Studio — Enterprise Architecture for the Utility Industry</title>
-<meta name="description" content="Turning Point Studio. Enterprise architecture and AI integration for utility-industry solution architects and enterprise architects.">
+<meta name="description" content="Turning Point Studio LLC. Reference architectures, NERC CIP-aware compliance patterns, and EA practice tooling for utility-industry solution architects and enterprise architects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -85,6 +85,29 @@
   section p { margin-bottom: 18px; color: var(--ink-soft); max-width: 680px; }
   section p:last-child { margin-bottom: 0; }
 
+  /* Practice areas */
+  .practice-list { list-style: none; margin-top: 36px; }
+  .practice-list li {
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    align-items: baseline;
+  }
+  .practice-list li:last-child { border-bottom: 1px solid var(--rule); }
+  .practice-list .pa-title {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .practice-list .pa-desc {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
   /* Approach blocks */
   .principles { display: grid; gap: 36px; margin-top: 40px; }
   .principle { display: grid; grid-template-columns: 48px 1fr; gap: 24px; align-items: start; }
@@ -145,6 +168,7 @@
     nav a { margin-left: 18px; font-size: 14px; }
     .contact-card { padding: 28px 24px; }
     .principle { grid-template-columns: 36px 1fr; gap: 16px; }
+    .practice-list li { grid-template-columns: 1fr; gap: 6px; }
   }
 </style>
 </head>
@@ -154,6 +178,7 @@
   <div class="container header-row">
     <a href="#" class="brand">Turning Point <span>Studio</span></a>
     <nav>
+      <a href="#practice">Practice</a>
       <a href="#approach">Approach</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -163,44 +188,74 @@
 
 <div class="hero">
   <div class="container">
-    <div class="eyebrow">Enterprise Architecture &middot; AI Integration</div>
-    <h1>Architecture for the utility industry, redrawn for the age of AI.</h1>
-    <p class="lede">Turning Point Studio works with solution architects and enterprise architects inside utilities — building reference patterns, integration designs, and pragmatic AI capability that fits how the industry actually operates.</p>
+    <div class="eyebrow">Enterprise Architecture for Utilities</div>
+    <h1>Reference architectures and EA practice, built for the utility industry.</h1>
+    <p class="lede">Turning Point Studio works with solution architects and enterprise architects inside investor-owned, public-power, and federal utilities &mdash; producing reference patterns, NERC CIP-aware compliance architectures, and the EA tooling teams use to keep their work auditable.</p>
   </div>
 </div>
+
+<section id="practice">
+  <div class="container">
+    <h2>Practice areas</h2>
+    <p>The studio's work is organized around the architectural problems utilities actually have on their roadmaps &mdash; not generic enterprise AI.</p>
+
+    <ul class="practice-list">
+      <li>
+        <div class="pa-title">Transmission &amp; distribution</div>
+        <div class="pa-desc">Reference architectures for transmission operations, distribution management, and the OT/IT seam between them.</div>
+      </li>
+      <li>
+        <div class="pa-title">NERC CIP alignment</div>
+        <div class="pa-desc">Compliance-aware patterns for systems touching BES Cyber Assets, BCSI handling, and audit-ready documentation.</div>
+      </li>
+      <li>
+        <div class="pa-title">Grid modernization</div>
+        <div class="pa-desc">AMI, OMS, DERMS, and DER integration architectures &mdash; designed for the data flows and stakeholder boundaries that already exist.</div>
+      </li>
+      <li>
+        <div class="pa-title">EA practice tooling</div>
+        <div class="pa-desc">ArchiMate and TOGAF-aligned artifacts, viewpoint conventions, and capture tooling for EA teams who have to defend their work.</div>
+      </li>
+      <li>
+        <div class="pa-title">AI-augmented EA capture <small style="font-weight: 400; color: var(--muted);">(opt-in)</small></div>
+        <div class="pa-desc">Curated, viewpoint-specific prompts for EA, SA, and BA data capture and analysis. Strictly opt-in; never the headline.</div>
+      </li>
+    </ul>
+  </div>
+</section>
 
 <section id="approach">
   <div class="container">
     <h2>Approach</h2>
-    <p>Utilities don't need another AI sales pitch. They need architecture that holds up against regulatory scrutiny, legacy integration constraints, and operations teams that have to live with the result for the next twenty years.</p>
+    <p>Utilities don't need another transformation pitch. They need architecture that holds up against regulatory scrutiny, legacy integration constraints, and operations teams who will live with the result for the next twenty years.</p>
 
     <div class="principles">
       <div class="principle">
         <div class="num">01</div>
         <div>
-          <h3>Build first, demonstrate second</h3>
-          <p>Every offering ships only after the underlying capability is real, repeatable, and supportable. Nothing gets sold from a slide.</p>
+          <h3>Domain first, not generic</h3>
+          <p>Utility-industry context drives every artifact. Power, water, gas, regulatory boundaries, OT/IT seams &mdash; not enterprise IT in general.</p>
         </div>
       </div>
       <div class="principle">
         <div class="num">02</div>
         <div>
           <h3>Opinionated reference architectures</h3>
-          <p>Strong defaults, narrow scope, clear trade-offs. The point is to remove decisions from the architect's plate — not add to them.</p>
+          <p>Strong defaults, narrow scope, clear trade-offs. The point is to remove decisions from the architect's plate &mdash; not add to them.</p>
         </div>
       </div>
       <div class="principle">
         <div class="num">03</div>
         <div>
-          <h3>Domain over generality</h3>
-          <p>Utility-industry context comes first. Power, water, gas, grid modernization, regulatory boundaries, OT/IT seams. Not generic enterprise AI.</p>
+          <h3>Operator-grade, not demo-grade</h3>
+          <p>Designs are evaluated against the people who run the system at 2 a.m., not the people who saw the deck.</p>
         </div>
       </div>
       <div class="principle">
         <div class="num">04</div>
         <div>
-          <h3>Operator-grade, not demo-grade</h3>
-          <p>Designs are evaluated against the people who run the system at 2 a.m., not the people who saw the deck.</p>
+          <h3>Build first, demonstrate second</h3>
+          <p>Every offering ships only after the underlying capability is real, repeatable, and supportable. Nothing gets sold from a slide.</p>
         </div>
       </div>
     </div>
@@ -210,21 +265,21 @@
 <section id="about">
   <div class="container">
     <h2>About</h2>
-    <p>Turning Point Studio is led by Bob Beckman, a senior enterprise architect with deep tenure in the utility industry. The studio applies four decades of pattern recognition — what works inside utilities, what dies on contact — to the current generation of AI and architecture tooling.</p>
-    <p>The focus is narrow on purpose: the studio serves solution architects and enterprise architects working inside utilities, not the broader enterprise AI market.</p>
+    <p>Turning Point Studio is led by Bob Beckman, a career enterprise architect formerly with Bonneville Power Administration. The studio applies that pattern recognition &mdash; what works inside utilities, what dies on contact &mdash; to the architectural problems on utility roadmaps today.</p>
+    <p>The focus is narrow on purpose: the studio serves solution architects and enterprise architects working inside utilities. Not the broader enterprise market.</p>
 
     <div class="credentials">
       <div class="item">
         <div class="label">Founder</div>
-        Bob Beckman, Senior Enterprise Architect
+        Bob Beckman, Senior Enterprise Architect &middot; formerly Bonneville Power Administration
       </div>
       <div class="item">
-        <div class="label">Background</div>
-        Formerly Bonneville Power Administration
+        <div class="label">Entity</div>
+        TURNING POINT STUDIO LLC &middot; Oregon
       </div>
       <div class="item">
-        <div class="label">Studio</div>
-        Turning Point Studio LLC &middot; Pacific Northwest, USA
+        <div class="label">Practice focus</div>
+        Solution and enterprise architects inside investor-owned, public-power, and federal utilities
       </div>
     </div>
   </div>
@@ -233,10 +288,9 @@
 <section id="contact">
   <div class="container">
     <h2>Contact</h2>
-    <p>The studio is in active build phase. Engagements open as capability comes online. If you are a utility-industry architect and want to be on the short list when offerings ship, get in touch.</p>
+    <p>The studio is in active build phase. Architectural offerings publish here as each is ready. Utility-industry architects who want to be on the short list when those publish are welcome to reach out directly.</p>
 
     <div class="contact-card">
-      <p>Direct inquiries only — no vendor pitches, no recruiters, no marketing lists.</p>
       <a class="contact-link" href="mailto:beckmanbob@gmail.com?subject=Turning%20Point%20Studio%20inquiry">beckmanbob@gmail.com &rarr;</a>
     </div>
   </div>
@@ -244,7 +298,7 @@
 
 <footer>
   <div class="container footer-row">
-    <div>&copy; 2026 Turning Point Studio LLC</div>
+    <div>&copy; 2026 TURNING POINT STUDIO LLC &middot; Oregon</div>
     <div>Pacific Northwest, USA</div>
   </div>
 </footer>
