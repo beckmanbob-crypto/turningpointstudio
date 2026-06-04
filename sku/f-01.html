@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F-01 · Electric Utility EA Meta-Model Foundation — Turning Point Studio</title>
+<meta name="description" content="F-01 is the foundational meta-model for Turning Point Studio's electric utility reference architectures. ArchiMate scaffolding, capability catalog, canonical data model, integration pattern library, customization contract.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../brand/favicon-32.png">
+<link rel="alternate icon" href="../brand/favicon.ico">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<meta property="og:image" content="https://turningpointstudio.net/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="draft-banner">
+  <strong>Draft v2.0</strong> &nbsp;·&nbsp; Internal review only — not for publication.
+</div>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="../index-v2-draft.html" class="brand">
+      <img class="brand-mark" src="../brand/enso-mark.png" alt="Turning Point Studio mark">
+      Turning Point <span>Studio</span>
+    </a>
+    <nav>
+      <a href="../index-v2-draft.html#catalog">Catalog</a>
+      <a href="../index-v2-draft.html#ai">AI Add-On</a>
+      <a href="../index-v2-draft.html#process">Process</a>
+      <a href="../index-v2-draft.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index-v2-draft.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index-v2-draft.html#catalog">Catalog</a>
+    <span class="sep">/</span>
+    <span>F-01</span>
+  </div>
+</div>
+
+<div class="sku-hero">
+  <div class="container">
+    <span class="sku-id-badge">F-01</span>
+    <span class="status-pill build">Phase 1 build · ships month 6–9</span>
+    <h1>Electric Utility EA Meta-Model Foundation</h1>
+    <p class="tagline">The substrate every other building block extends. ArchiMate-aligned domain meta-model with the data, capability, and integration scaffolding for electric utility architecture work — plus the customization contract that lets it compose with future blocks.</p>
+
+    <div class="sku-hero-meta">
+      <div class="meta-block">
+        <div class="meta-label">License (mid-tier)</div>
+        <div class="meta-value">$12,000 – $18,000</div>
+        <div class="meta-sub">Perpetual single-organization license</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Annual maintenance</div>
+        <div class="meta-value">$2,400 – $3,600</div>
+        <div class="meta-sub">20% · regulatory + pattern updates</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Dependency</div>
+        <div class="meta-value">None</div>
+        <div class="meta-sub">Required by C-01, T-01, and all v2/v3</div>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="../index-v2-draft.html#contact" class="btn btn-primary">License F-01</a>
+      <a href="../index-v2-draft.html#contact" class="btn btn-secondary">Request detail packet</a>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT F-01 IS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">What it is</div>
+    <h2>A meta-model, not a model.</h2>
+    <p class="section-lede">F-01 is the rules, scaffolding, and contract by which every other Turning Point Studio building block is constructed. It defines what an artifact has to look like to be an "electric utility reference architecture" — element naming, layer assignment, capability taxonomy, canonical data entities (CIM-aligned), integration-pattern shape, and customization rules.</p>
+    <p>If C-01 and T-01 are reference architectures for specific electric utility domains, F-01 is the spec those reference architectures conform to. It is also a usable standalone product: an electric utility EA team that licenses F-01 alone gets a complete starter kit for running an ArchiMate-based EA practice — they're simply not getting the domain-specific content C-01 and T-01 add on top.</p>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">What's inside</div>
+    <h2>Eight components in the bundle</h2>
+    <p class="section-lede">Each component ships in a format usable by Archi, ArchiMate-compatible tools, or any EA team working from structured files.</p>
+
+    <table class="components-table">
+      <thead>
+        <tr><th></th><th>Component</th><th>Description</th><th>Format</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">01</td>
+          <td class="name">ArchiMate meta-model</td>
+          <td>Domain-tuned ArchiMate profile — element types, relationships, layer rules across Business, Application, Data, and Technology.</td>
+          <td class="format"><code>.archimate</code> + spec PDF</td>
+        </tr>
+        <tr>
+          <td class="num">02</td>
+          <td class="name">Capability catalog (skeleton)</td>
+          <td>Top-down hierarchical capability model — utility-generic capabilities at levels 1–3; level 4+ extended by domain blocks.</td>
+          <td class="format">ArchiMate views + Excel</td>
+        </tr>
+        <tr>
+          <td class="num">03</td>
+          <td class="name">Canonical data model</td>
+          <td>Core entities (Customer, Account, Premises, Meter, Asset, Service Point, Outage, Event, Work Order) with attributes and relationships.</td>
+          <td class="format">ER + JSON Schema + Excel</td>
+        </tr>
+        <tr>
+          <td class="num">04</td>
+          <td class="name">Standards mapping</td>
+          <td>Crosswalk from F-01 canonical model to CIM (IEC 61968 / 61970), MultiSpeak, and OpenADR where relevant.</td>
+          <td class="format">Mapping XLSX + PDF</td>
+        </tr>
+        <tr>
+          <td class="num">05</td>
+          <td class="name">Integration pattern library</td>
+          <td>Scaffolding patterns — request/reply, pub/sub, ETL, event-driven, file-based, edge sync — with sequence diagrams and message specs.</td>
+          <td class="format">Sequence diagrams + catalog</td>
+        </tr>
+        <tr>
+          <td class="num">06</td>
+          <td class="name">Technology reference</td>
+          <td>Vendor-agnostic reference technology choices at each layer with substitution notes (what swaps cleanly, what doesn't).</td>
+          <td class="format">ADRs + reference PDF</td>
+        </tr>
+        <tr>
+          <td class="num">07</td>
+          <td class="name">Customization guide / meta-model contract</td>
+          <td>The most important artifact — what's stable, what's pluggable, what utility-context specializations are allowed, what would break the contract.</td>
+          <td class="format">Long-form spec PDF</td>
+        </tr>
+        <tr>
+          <td class="num">08</td>
+          <td class="name">Maturity assessment template</td>
+          <td>Self-administered questionnaire mapped to the capability catalog; produces a heat-map of current state vs. reference.</td>
+          <td class="format">XLSX workbook + scoring guide</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- WHAT IT SOLVES vs WHAT IT ISN'T -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Problem &amp; boundary</div>
+    <h2>What F-01 solves — and what it deliberately doesn't.</h2>
+
+    <div class="dual-block">
+      <div class="dual-col">
+        <h3>What F-01 solves</h3>
+        <p>Every utility EA team that adopts ArchiMate or TOGAF burns 6–18 months rebuilding the same scaffolding. The work doesn't differentiate them; it just has to exist before anything useful happens in the modeling tool.</p>
+        <ul>
+          <li>Utility A and Utility B's capability maps can't be compared, even when they do the same work.</li>
+          <li>A model built by Vendor X doesn't import cleanly into a model built by Vendor Y.</li>
+          <li>Integration patterns get reinvented per project because there's no organizational library.</li>
+          <li>The two-person EA team keeps getting pulled into project work because their reference work never gets ahead of demand.</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>What F-01 deliberately excludes</h3>
+        <p>F-01 stays at the meta-level. Domain content lives in dedicated building blocks so each can be priced, licensed, and reviewed separately by a buyer's procurement and security teams.</p>
+        <ul>
+          <li>NERC CIP control mappings — that's <a href="c-01.html">C-01</a>.</li>
+          <li>Transmission operations content (EMS/SCADA, FERC 890) — that's <a href="t-01.html">T-01</a>.</li>
+          <li>Distribution domain content (DER, AMI, OMS) — that's D-01 / D-02 / D-03 on the roadmap.</li>
+          <li>AI-augmented analysis tooling — that's the <a href="ai-add-on.html">AI add-on</a> (B-01 + B-02).</li>
+          <li>Implementation labor for your specific org — that's S-01 / S-02 (onboarding services).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- META-MODEL CONTRACT -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">The hard engineering call</div>
+    <h2>The meta-model contract</h2>
+    <p class="section-lede">The TOGAF Purist on the studio's review staff flagged this as the single most important artifact in the entire backlog. Budget 25–30% of Phase 1 time on the contract alone. The contract is what makes F-01 compose with C-01, T-01, and everything that comes after.</p>
+
+    <div class="dual-block" style="grid-template-columns: 1fr 1fr;">
+      <div class="dual-col">
+        <h3>Stable</h3>
+        <p style="font-size: 14px;">Cannot change without a major version bump.</p>
+        <ul>
+          <li>Core ArchiMate element types and layer rules</li>
+          <li>Capability hierarchy at levels 1–3</li>
+          <li>Canonical entities (names, identity rules)</li>
+          <li>Standards-mapping anchors</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>Pluggable</h3>
+        <p style="font-size: 14px;">Extension points for domain blocks.</p>
+        <ul>
+          <li>Capability hierarchy levels 4+</li>
+          <li>Domain-specific entities (BES Cyber Asset, AMI Endpoint, DER)</li>
+          <li>Integration pattern specializations</li>
+          <li>Compliance overlays (CIP, FERC, NIST CSF)</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>Customer-customizable</h3>
+        <p style="font-size: 14px;">Additive changes only. Extending, never renaming.</p>
+        <ul>
+          <li>Naming aliases (preserves canonical mapping)</li>
+          <li>Additional attributes on canonical entities</li>
+          <li>Additional capabilities at levels 4+</li>
+          <li>Technology substitutions per the substitution notes</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>Forbidden</h3>
+        <p style="font-size: 14px;">Breaks the contract. Named explicitly in the customization guide.</p>
+        <ul>
+          <li>Renaming canonical entities</li>
+          <li>Changing layer assignments</li>
+          <li>Removing capabilities from the hierarchy</li>
+          <li>Restructuring the canonical model relationships</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPENDENCIES -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Dependency graph</div>
+    <h2>F-01 is the foundation. Every other block extends it.</h2>
+    <p class="section-lede">A customer can license F-01 alone for the EA starter-kit value. Domain blocks (C-01, T-01, D-01, D-02, D-03, all v3) implicitly require F-01 as a prerequisite license.</p>
+
+    <div class="deps-block">
+      <div class="deps-diagram">                        F-01 · Meta-Model Foundation
+                       (this product)
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+       C-01                  T-01              D-01 / D-02 / D-03
+    NERC CIP Pack       Transmission Ops     Grid Mod · AMI · OMS
+                                                     │
+                                              (v3 backlog →)
+                                          CIS · WAM · ETRM · GIS · …</div>
+      <div class="deps-note"><strong>License logic:</strong> licensing C-01 or T-01 includes the F-01 foundation. Licensing F-01 alone is also supported and gives you the EA starter kit without the domain-specific content. Maintenance compounds: a customer with F-01 + C-01 maintains both at 20% of their respective list prices.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Pricing by tier</div>
+    <h2>How F-01 prices across organization sizes</h2>
+    <p class="section-lede">Listed prices are the mid-tier band. Smaller and larger organizations adjust by the published multiplier. Consultancies and resellers use a separate tier with a per-engagement royalty.</p>
+
+    <table class="tier-table-full">
+      <thead>
+        <tr><th>Tier</th><th>Org size</th><th>Multiplier</th><th>License price</th><th>Annual maint. (20%)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tier-name">Small</td>
+          <td>&lt;100K customers, small public power</td>
+          <td class="mult">0.6×</td>
+          <td class="price">$7,200 – $10,800</td>
+          <td class="price">$1,440 – $2,160</td>
+        </tr>
+        <tr class="listed">
+          <td class="tier-name">Mid (listed)</td>
+          <td>100K – 1M customers</td>
+          <td class="mult">1.0×</td>
+          <td class="price">$12,000 – $18,000</td>
+          <td class="price">$2,400 – $3,600</td>
+        </tr>
+        <tr>
+          <td class="tier-name">Large</td>
+          <td>&gt;1M customers, ISO/RTO, federal power</td>
+          <td class="mult">1.5×</td>
+          <td class="price">$18,000 – $27,000</td>
+          <td class="price">$3,600 – $5,400</td>
+        </tr>
+        <tr>
+          <td class="tier-name">Consultancy / Reseller</td>
+          <td>Use-on-multiple-clients license</td>
+          <td class="mult">2.5× + 5%</td>
+          <td class="price">$30,000 – $45,000</td>
+          <td class="price">$6,000 – $9,000</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 14px; color: var(--muted); margin-top: 20px;">Design-partner pricing during the v1 build phase: subsidized to ~$10K. Limited to three partners across the v1 catalog.</p>
+  </div>
+</section>
+
+<!-- BUNDLE -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Delivery</div>
+    <h2>What ships in the F-01 bundle</h2>
+    <p class="section-lede">A versioned, license-protected bundle delivered to a customer-designated recipient. License key issued; onboarding clock starts.</p>
+
+    <ul class="bundle-list">
+      <li>F-01-meta-model-v1.0.archimate
+        <span class="desc">The meta-model itself, openable in Archi</span></li>
+      <li>F-01-capability-catalog-v1.0.xlsx + .archimate view
+        <span class="desc">Hierarchical capability model + ArchiMate visualization</span></li>
+      <li>F-01-canonical-data-model-v1.0.{json, xlsx, pdf}
+        <span class="desc">Three formats so EA, data, and engineering teams all have a usable copy</span></li>
+      <li>F-01-standards-mapping-v1.0.xlsx
+        <span class="desc">CIM / MultiSpeak / OpenADR crosswalk</span></li>
+      <li>F-01-integration-patterns-v1.0/
+        <span class="desc">Folder of pattern docs and sequence diagrams</span></li>
+      <li>F-01-technology-reference-v1.0.pdf
+        <span class="desc">Vendor-agnostic technology choices with substitution notes</span></li>
+      <li>F-01-customization-guide-v1.0.pdf
+        <span class="desc">The contract — the most important file in the bundle</span></li>
+      <li>F-01-maturity-assessment-v1.0.xlsx
+        <span class="desc">Self-administered current-state assessment</span></li>
+      <li>F-01-license.pdf
+        <span class="desc">Perpetual single-org license agreement</span></li>
+      <li>F-01-changelog-v1.0.md
+        <span class="desc">Version history and breaking-change log</span></li>
+    </ul>
+    <p style="font-size: 14px; color: var(--muted); margin-top: 24px;">Plus 90 days of email support during onboarding, access to private quarterly release notes, and the annual-maintenance update stream.</p>
+  </div>
+</section>
+
+<!-- OPEN QUESTIONS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Build status &amp; open questions</div>
+    <h2>What's still being decided</h2>
+    <p class="section-lede">F-01 is in active Phase 1 build. The questions below are tracked openly so design partners and early licensees know what's converging and what's still in motion.</p>
+
+    <ul class="questions-list">
+      <li>
+        <strong>Meta-model abstraction depth</strong>
+        Stable-core vs. pluggable-boundary is the hardest engineering call. Being iterated through design-partner #1 build sessions.
+      </li>
+      <li>
+        <strong>Capability hierarchy levels 1–3 content</strong>
+        How comprehensive should the utility-generic capability set be on day one? Lean (Helena's view) vs. comprehensive enough to map to a real org chart without forcing customization on day one (Janet's view). Decision pending.
+      </li>
+      <li>
+        <strong>Maturity assessment template — v1.0 or v1.1?</strong>
+        AI Realist leans toward shipping the assessment with v1.1 once F-01 has been field-tested and we have real ground-truth scoring data.
+      </li>
+      <li>
+        <strong>CIM mapping completeness</strong>
+        Full IEC 61968/61970 or the most-used 20%? Trade-off between signal of seriousness and time-to-ship.
+      </li>
+      <li>
+        <strong>Lead-magnet excerpt</strong>
+        Can the customization guide and capability catalog be partially excerpted as a free preview without devaluing the licensed product? Customer Voice says yes; broader review pending.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Pairs well with</div>
+    <h2>Related SKUs</h2>
+    <div class="related-grid">
+      <a class="related-card" href="c-01.html">
+        <div class="rc-id">C-01</div>
+        <div class="rc-name">NERC CIP Compliance Pack</div>
+        <div class="rc-desc">Bolts compliance overlays onto the F-01 meta-model. Required by BES-registered entities.</div>
+      </a>
+      <a class="related-card" href="t-01.html">
+        <div class="rc-id">T-01</div>
+        <div class="rc-name">Transmission Operations</div>
+        <div class="rc-desc">EMS/SCADA, FERC 890, market interactions. Extends F-01 into transmission ops.</div>
+      </a>
+      <a class="related-card" href="ai-add-on.html">
+        <div class="rc-id">B-01 + B-02</div>
+        <div class="rc-name">AI add-on</div>
+        <div class="rc-desc">Curated prompts + Python/Archi connector that operate on F-01 structured data.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <h3>License F-01</h3>
+      <p>Email the studio with your organization's tier, any procurement specifics, and whether you'd like to bundle C-01 or T-01. Response within two business days.</p>
+      <div class="hero-ctas">
+        <a href="../index-v2-draft.html#contact" class="btn btn-primary">Inquire about F-01</a>
+        <a href="../index-v2-draft.html#process" class="btn btn-secondary">How buying works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-row">
+      <div>&copy; 2026 TURNING POINT STUDIO LLC &middot; Oregon SOS #257142696</div>
+      <div class="footer-links">
+        <a href="../index-v2-draft.html#catalog">Catalog</a>
+        <a href="../index-v2-draft.html#process">Licensing</a>
+        <a href="../index-v2-draft.html#faq">FAQ</a>
+        <a href="../index-v2-draft.html#contact">Co

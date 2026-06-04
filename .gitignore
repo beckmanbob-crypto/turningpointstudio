@@ -1,0 +1,14 @@
+# Deny-by-default. The Cloudflare Worker serves the repo root
+# (wrangler assets.directory="."), so ANYTHING committed here is
+# publicly readable on turningpointstudio.net. Only website files
+# are allowed below; all internal docs/financials stay private.
+/*
+!/.gitignore
+!/index.html
+!/community.html
+!/catalog.html
+!/site.css
+!/brand/
+!/brand/**
+!/sku/
+!/sku/**

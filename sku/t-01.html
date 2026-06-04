@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T-01 · Transmission Operations Reference Architecture — Turning Point Studio</title>
+<meta name="description" content="T-01 is the reference architecture for transmission operations — EMS/SCADA, congestion management, FERC 890 (OASIS/ATC/tagging), CAISO/SPP/MISO market interactions, OT/IT seam with NERC CIP overlay.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../brand/favicon-32.png">
+<link rel="alternate icon" href="../brand/favicon.ico">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<meta property="og:image" content="https://turningpointstudio.net/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="draft-banner">
+  <strong>Draft v2.0</strong> &nbsp;·&nbsp; Internal review only — not for publication.
+</div>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="../index-v2-draft.html" class="brand">
+      <img class="brand-mark" src="../brand/enso-mark.png" alt="Turning Point Studio mark">
+      Turning Point <span>Studio</span>
+    </a>
+    <nav>
+      <a href="../index-v2-draft.html#catalog">Catalog</a>
+      <a href="../index-v2-draft.html#ai">AI Add-On</a>
+      <a href="../index-v2-draft.html#process">Process</a>
+      <a href="../index-v2-draft.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index-v2-draft.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index-v2-draft.html#catalog">Catalog</a>
+    <span class="sep">/</span>
+    <span>T-01</span>
+  </div>
+</div>
+
+<div class="sku-hero">
+  <div class="container">
+    <span class="sku-id-badge">T-01</span>
+    <span class="status-pill build">Phase 1 build · ships month 6–9</span>
+    <h1>Transmission Operations Reference Architecture</h1>
+    <p class="tagline">EMS/SCADA, congestion management, FERC Order 890 compliance, and market interactions for transmission owners and ISOs/RTOs. The architecture you would build if you had seventeen years to do it right.</p>
+
+    <div class="sku-hero-meta">
+      <div class="meta-block">
+        <div class="meta-label">License (mid-tier)</div>
+        <div class="meta-value">$20,000 – $30,000</div>
+        <div class="meta-sub">Perpetual single-organization license</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Annual maintenance</div>
+        <div class="meta-value">$4,000 – $6,000</div>
+        <div class="meta-sub">20% · FERC + market rule updates</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Dependency</div>
+        <div class="meta-value"><a href="f-01.html">F-01</a></div>
+        <div class="meta-sub">Required as prerequisite license</div>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="../index-v2-draft.html#contact" class="btn btn-primary">License T-01</a>
+      <a href="../index-v2-draft.html#contact" class="btn btn-secondary">Request detail packet</a>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT T-01 IS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">What it is</div>
+    <h2>Transmission operations, architected end to end.</h2>
+    <p class="section-lede">T-01 is a reference architecture covering the full transmission operations stack: real-time monitoring and control (EMS/SCADA), congestion and study workflows, FERC Order 890 obligations (OASIS posting, ATC calculation, tagging), market interactions with the relevant ISO/RTO, and the OT/IT seam where reliability operations meet enterprise IT.</p>
+    <p>It is built on the substrate every utility-industry transmission engineer recognizes: control areas, balancing authorities, scheduling entities, NERC functional model boundaries. The architecture doesn't invent a new operating model — it formalizes the one that already exists.</p>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">What's inside</div>
+    <h2>Six components in the bundle</h2>
+    <p class="section-lede">T-01 covers the operational stack from substation telemetry to market settlement, organized so a transmission architect can pull the section they need without reading the rest.</p>
+
+    <table class="components-table">
+      <thead>
+        <tr><th></th><th>Component</th><th>Description</th><th>Format</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">01</td>
+          <td class="name">EMS / SCADA reference architecture</td>
+          <td>State estimator, contingency analysis, AGC, ICCP interconnections, historian, alarm management, operator UI. Vendor-agnostic patterns with substitution notes for OSI, GE, Hitachi (ABB), Siemens.</td>
+          <td class="format">ArchiMate views + spec PDF</td>
+        </tr>
+        <tr>
+          <td class="num">02</td>
+          <td class="name">Congestion management &amp; study workflows</td>
+          <td>Outage scheduling, study coordination, congestion identification, transmission service request handling. Built for SAMC, study coordinator, and outage scheduler roles.</td>
+          <td class="format">Process + ArchiMate + sequence diagrams</td>
+        </tr>
+        <tr>
+          <td class="num">03</td>
+          <td class="name">FERC Order 890 architecture (OASIS / ATC / tagging)</td>
+          <td>OASIS posting workflows, ATC calculation patterns, NERC e-Tag handling, transmission service product catalog. Aligned with the current OATT.</td>
+          <td class="format">Architecture spec + e-Tag schema</td>
+        </tr>
+        <tr>
+          <td class="num">04</td>
+          <td class="name">Market interactions (CAISO / SPP / MISO patterns)</td>
+          <td>Day-ahead and real-time market participation patterns for transmission owners and load-serving entities. Settlement, congestion revenue, and FTR/CRR handling at the architecture level.</td>
+          <td class="format">ArchiMate + market integration spec</td>
+        </tr>
+        <tr>
+          <td class="num">05</td>
+          <td class="name">OT/IT seam with NERC CIP overlay</td>
+          <td>Where SCADA stops and enterprise IT starts. Data diodes, jump hosts, historian replication, alarm forwarding, with explicit CIP-005 / CIP-007 / CIP-010 implications.</td>
+          <td class="format">Topology + ADRs + CIP overlay</td>
+        </tr>
+        <tr>
+          <td class="num">06</td>
+          <td class="name">Outage scheduling and study workflows</td>
+          <td>End-to-end outage lifecycle — request, study, approval, execution, restoration, settlement. Aligned with NERC TOP and IRO standards.</td>
+          <td class="format">Workflow spec + ArchiMate views</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PROBLEM / BOUNDARY -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Problem &amp; boundary</div>
+    <h2>What T-01 solves — and where it stops.</h2>
+
+    <div class="dual-block">
+      <div class="dual-col">
+        <h3>What T-01 solves</h3>
+        <p>Transmission operations architecture gets rebuilt every time a utility replaces its EMS or joins/leaves a market. The reference is implicit in the heads of senior architects, not written down. T-01 writes it down.</p>
+        <ul>
+          <li>EMS replacement projects that lose months because the integration points weren't modeled in advance.</li>
+          <li>OT/IT seam designs that look fine until CIP-005 audit finds the gap.</li>
+          <li>Market participation projects that learn the settlement and tagging architecture from the ISO docs the hard way.</li>
+          <li>Congestion management workflows where SAMC, study coordinator, and outage scheduler are doing the same job three times.</li>
+          <li>FERC 890 audits that surface OASIS posting drift years after the original integration.</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>What T-01 deliberately excludes</h3>
+        <p>T-01 is the transmission ops reference architecture. It is not your EMS, not your market participation strategy, not your distribution-side operations.</p>
+        <ul>
+          <li>EMS vendor selection or implementation (you do this with your vendor, T-01 informs the requirements).</li>
+          <li>Distribution operations (OMS, ADMS, FLISR) — that's D-03 on the roadmap.</li>
+          <li>Generation dispatch optimization or unit commitment — generation operations stays out of scope.</li>
+          <li>Real-time market trading strategy — T-01 is architecture, not market participation playbook.</li>
+          <li>NERC standards outside CIP, TOP, IRO, MOD (e.g., PRC for protection systems) — scoped to v1.1+.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ISO/RTO COVERAGE -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">ISO / RTO market coverage</div>
+    <h2>Which markets v1 covers, at what depth</h2>
+    <p class="section-lede">v1 covers the four ISOs/RTOs where the patterns are most stable and the studio's direct operating experience is deepest. Other markets are addressable in v1.1 — explicitly called out so a buyer in PJM or NYISO knows the gap up front.</p>
+
+    <div class="dual-block">
+      <div class="dual-col">
+        <h3>Deep coverage in v1</h3>
+        <ul>
+          <li><strong>CAISO</strong> — day-ahead, real-time, FRP, FERC 2222</li>
+          <li><strong>SPP</strong> — Integrated Marketplace, FTR auctions</li>
+          <li><strong>MISO</strong> — day-ahead, real-time, FTR allocations</li>
+          <li><strong>Bilateral / non-ISO</strong> — pattern for non-RTO transmission owners (e.g., NWPP footprint)</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>v1.1 expansion candidates</h3>
+        <ul>
+          <li><strong>PJM</strong> — capacity market mechanics differ enough to warrant a dedicated pattern</li>
+          <li><strong>ERCOT</strong> — different reliability framework (TRE not NERC), separate architecture overlay</li>
+          <li><strong>NYISO</strong> — capacity and ancillary services patterns</li>
+          <li><strong>ISO-NE</strong> — capacity, ancillary, retirement mechanics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPENDENCIES -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Dependency</div>
+    <h2>T-01 requires F-01. Pairs naturally with C-01.</h2>
+
+    <div class="deps-block">
+      <div class="deps-diagram">              F-01 · Meta-Model Foundation
+                          │
+                          │  (prerequisite)
+                          │
+             ┌────────────┴────────────┐
+             │                         │
+            T-01                     C-01
+       Transmission Ops          NERC CIP Pack
+       (this product)         (natural companion)
+             │                         │
+             └────────── ⤬ ────────────┘
+                    OT/IT seam with
+                    CIP overlay shared</div>
+      <div class="deps-note"><strong>License logic:</strong> T-01 requires F-01. Most transmission owners will also license C-01 because their EMS/SCADA architecture is BES-categorized — the OT/IT seam component of T-01 and the CIP overlay in C-01 are designed to compose. Bundled F-01 + T-01 + C-01 receives a discount typically negotiated at procurement.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Pricing by tier</div>
+    <h2>How T-01 prices across organization sizes</h2>
+    <p class="section-lede">Transmission ownership skews larger than the broader utility population — most T-01 buyers will be in the Large tier (ISO/RTO, federal power, IOU transmission affiliates). Smaller transmission owners and municipals are accommodated by the Small tier multiplier.</p>
+
+    <table class="tier-table-full">
+      <thead>
+        <tr><th>Tier</th><th>Org size</th><th>Multiplier</th><th>License price</th><th>Annual maint. (20%)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tier-name">Small</td>
+          <td>&lt;100K customers, small public power</td>
+          <td class="mult">0.6×</td>
+          <td class="price">$12,000 – $18,000</td>
+          <td class="price">$2,400 – $3,600</td>
+        </tr>
+        <tr class="listed">
+          <td class="tier-name">Mid (listed)</td>
+          <td>100K – 1M customers</td>
+          <td class="mult">1.0×</td>
+          <td class="price">$20,000 – $30,000</td>
+          <td class="price">$4,000 – $6,000</td>
+        </tr>
+        <tr>
+          <td class="tier-name">Large</td>
+          <td>&gt;1M customers, ISO/RTO, federal power</td>
+          <td class="mult">1.5×</td>
+          <td class="price">$30,000 – $45,000</td>
+          <td class="price">$6,000 – $9,000</td>
+        </tr>
+        <tr>
+          <td class="tier-name">Consultancy / Reseller</td>
+          <td>Use-on-multiple-clients license</td>
+          <td class="mult">2.5× + 5%</td>
+          <td class="price">$50,000 – $75,000</td>
+          <td class="price">$10,000 – $15,000</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 14px; color: var(--muted); margin-top: 20px;">F-01 prerequisite is invoiced alongside T-01 if not already licensed. Bundle pricing for F-01 + T-01 + C-01 negotiated at procurement.</p>
+  </div>
+</section>
+
+<!-- BUNDLE -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Delivery</div>
+    <h2>What ships in the T-01 bundle</h2>
+
+    <ul class="bundle-list">
+      <li>T-01-ems-scada-architecture-v1.0.{archimate, pdf}
+        <span class="desc">State estimator, contingency analysis, AGC, ICCP, historian, alarm management, operator UI</span></li>
+      <li>T-01-congestion-management-workflows-v1.0.pdf
+        <span class="desc">Outage scheduling, study coordination, congestion identification</span></li>
+      <li>T-01-ferc890-oasis-atc-tagging-v1.0.pdf
+        <span class="desc">OASIS posting, ATC calculation, e-Tag handling, OATT alignment</span></li>
+      <li>T-01-etag-schema-v1.0.json
+        <span class="desc">Structured e-Tag schema for integration</span></li>
+      <li>T-01-market-interactions-v1.0/
+        <span class="desc">CAISO, SPP, MISO, and bilateral patterns — separate spec per market</span></li>
+      <li>T-01-ot-it-seam-with-cip-overlay-v1.0.pdf
+        <span class="desc">Topology, ADRs, and CIP-005 / CIP-007 / CIP-010 implications</span></li>
+      <li>T-01-outage-scheduling-workflow-v1.0.{xlsx, pdf}
+        <span class="desc">End-to-end outage lifecycle aligned with NERC TOP and IRO</span></li>
+      <li>T-01-vendor-substitution-notes-v1.0.pdf
+        <span class="desc">OSI / GE / Hitachi-ABB / Siemens substitution notes for vendor-agnostic patterns</span></li>
+      <li>T-01-license.pdf + T-01-changelog-v1.0.md
+        <span class="desc">License agreement and version history</span></li>
+    </ul>
+    <p style="font-size: 14px; color: var(--muted); margin-top: 24px;">90 days of email support during onboarding, access to private quarterly release notes including FERC + market rule updates, and the annual-maintenance update stream.</p>
+  </div>
+</section>
+
+<!-- OPEN QUESTIONS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Build status &amp; open questions</div>
+    <h2>What's still being decided</h2>
+
+    <ul class="questions-list">
+      <li>
+        <strong>ERCOT scope</strong>
+        ERCOT operates under TRE, not NERC, with materially different reliability framework. Decision: include as v1.1 separate overlay, or hold for D-04-ish dedicated ERCOT pack?
+      </li>
+      <li>
+        <strong>FERC Order 2222 depth</strong>
+        DER participation in wholesale markets is rolling out unevenly across ISOs. v1 has the architectural skeleton; the question is whether ISO-by-ISO Order 2222 implementation is part of T-01 or pulled into D-01.
+      </li>
+      <li>
+        <strong>Real-time market settlement depth</strong>
+        Architecture vs. settlement-detail depth. Architecture-only keeps T-01 focused; settlement detail risks bloating into commercial territory.
+      </li>
+      <li>
+        <strong>Vendor substitution notes</strong>
+        Currently four vendors documented (OSI, GE, Hitachi-ABB, Siemens). v1.1 candidates: Open Systems International AlertOS, GE PSEC, smaller EMS providers.
+      </li>
+      <li>
+        <strong>RC West / Peak RC / regional reliability coordinator interactions</strong>
+        Different RCs interact differently with TOPs. Baseline pattern in v1; RC-specific guidance for v1.1.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Pairs well with</div>
+    <h2>Related SKUs</h2>
+    <div class="related-grid">
+      <a class="related-card" href="f-01.html">
+        <div class="rc-id">F-01</div>
+        <div class="rc-name">Meta-Model Foundation</div>
+        <div class="rc-desc">Required prerequisite. The scaffolding T-01 extends into transmission operations.</div>
+      </a>
+      <a class="related-card" href="c-01.html">
+        <div class="rc-id">C-01</div>
+        <div class="rc-name">NERC CIP Compliance Pack</div>
+        <div class="rc-desc">Natural companion. T-01's OT/IT seam is designed to compose with C-01's CIP overlay.</div>
+      </a>
+      <a class="related-card" href="ai-add-on.html">
+        <div class="rc-id">B-01 + B-02</div>
+        <div class="rc-name">AI add-on</div>
+        <div class="rc-desc">Stakeholder Brief Generator and Application Cooperation Review are the most-used T-01 prompts.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <h3>License T-01</h3>
+      <p>Email the studio with your organization type (transmission owner, ISO/RTO, federal power, vertically integrated utility), which ISO/RTO footprint you operate in, and any procurement specifics. Response within two business days.</p>
+      <div class="hero-ctas">
+        <a href="../index-v2-draft.html#contact" class="btn btn-primary">Inquire about T-01</a>
+        <a href="../index-v2-draft.html#process" class="btn btn-secondary">How buying works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-row">
+      <div>&copy; 2026 TURNING POINT STUDIO LLC &middot; Oregon SOS #257142696</div>
+      <div class="footer-links">
+        <a href="../index-v2-draft.html#catalog">Catalog</a>
+        <a href="../index-v2-draft.html#process">Licensing</a>
+        <a href="../index-v2-draft.html#faq">FAQ</a>
+        <a href="../index-v2-draft.html#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>

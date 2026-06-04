@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalog — Turning Point Studio</title>
+<meta name="description" content="Interactive catalog of Turning Point Studio's electric-utility reference architectures — the suite map, one example model per pack, and click-through element detail.">
+<link rel="icon" type="image/png" sizes="32x32" href="brand/favicon-32.png">
+<link rel="alternate icon" href="brand/favicon.ico">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<meta property="og:title" content="Catalog — Turning Point Studio">
+<meta property="og:description" content="The full reference-architecture suite, one example model per pack, click-through detail.">
+<meta property="og:image" content="https://turningpointstudio.net/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  .lead-wrap { padding: 64px 0 34px; border-bottom: 1px solid var(--rule); }
+  .lead-wrap h1 { font-size: 38px; margin-bottom: 18px; }
+  .lead-wrap p { color: var(--text-2); max-width: 760px; font-weight: 300; font-size: 18px; }
+  .hint { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); margin-top: 14px; }
+  .hint::before { content: "// "; color: var(--cool); }
+
+  section.block { padding: 40px 0; border-bottom: 1px solid var(--rule); }
+  .block h2 { font-size: 15px; font-family: var(--font-mono); color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 18px; font-weight: 500; }
+
+  .panel { border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); overflow: hidden; }
+  .panel-head { font-family: var(--font-mono); font-size: 12.5px; color: var(--text-2); padding: 11px 16px; border-bottom: 1px solid var(--rule); background: var(--surface-2); display:flex; gap:8px; align-items:center; }
+  .panel-head .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rule); }
+  .panel-head .dot.r { background: #e06c5a; }
+  .canvas { background: #ffffff; }
+  .canvas svg { display:block; width:100%; height:auto; }
+
+  .explorer { display: grid; grid-template-columns: 1fr 340px; gap: 24px; margin-top: 6px; }
+  #detail { border:1px solid var(--rule); border-radius:10px; background: var(--surface); padding: 0; min-height: 340px; align-self:start; position:sticky; top:84px; }
+  #detail .d-head { padding:16px 18px 12px; border-bottom:1px solid var(--rule); }
+  #detail .d-kicker { font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--cool); margin-bottom:6px; }
+  #detail .d-title { font-family:var(--font-mono); font-size:17px; color:var(--text); font-weight:500; }
+  #detail .d-body { padding:16px 18px; }
+  #detail .d-what { color:var(--text-2); font-size:14.5px; line-height:1.6; margin-bottom:16px; }
+  #detail table { width:100%; border-collapse:collapse; }
+  #detail td { padding:7px 0; border-top:1px solid var(--rule-soft); font-size:13px; vertical-align:top; }
+  #detail td.k { color:var(--muted); font-family:var(--font-mono); font-size:11.5px; width:108px; padding-right:12px; }
+  #detail td.v { color:var(--text-2); }
+  #detail .pill { display:inline-block; font-family:var(--font-mono); font-size:10.5px; padding:3px 8px; border-radius:20px; border:1px solid var(--rule); color:var(--text-2); }
+  #detail .pill.ok { color:var(--ok); border-color:#1f5e2b; }
+  #detail .pill.road { color:var(--warn); border-color:#5e4a16; }
+  #detail .d-price { font-family:var(--font-mono); color:var(--cool-bright); font-size:14px; margin-top:4px; }
+  .el { cursor:pointer; }
+  .el rect { transition: filter .12s; }
+  .el:hover rect { filter: brightness(1.06); }
+  .el.sel rect { stroke-width:3; }
+  .sku-node { cursor:pointer; }
+  .sku-node:hover .nbox { filter: brightness(1.08); }
+  .sku-node.active .nbox { stroke:#58a6ff; stroke-width:2.5; }
+  .legend { font-family:var(--font-mono); font-size:11px; color:var(--muted); margin-top:14px; display:flex; gap:18px; flex-wrap:wrap; }
+  .legend span b { color:var(--text-2); font-weight:500; }
+  @media (max-width: 820px){ .explorer{ grid-template-columns:1fr; } #detail{ position:static; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-row">
+    <a href="index.html" class="brand">
+      <img class="brand-mark" src="brand/enso-mark.png" alt="Turning Point Studio mark">
+      Turning Point <span>Studio</span>
+    </a>
+    <nav>
+      <a href="index.html#practice">Practice</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="lead-wrap">
+  <div class="container">
+    <h1>The catalog, as a system</h1>
+    <p>Every pack extends one foundation. Start with the suite map to see how the pieces relate, open any pack to see a worked example model, then click an element to drill into its detail. This is the modeling standard — the packs are in active build and publish as each is complete.</p>
+    <div class="hint">click a pack in the map · then click any element in the model</div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="container">
+    <h2>Suite map — how the packs relate</h2>
+    <div class="panel">
+      <div class="panel-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span>&nbsp;turning-point-studio · product line</div>
+      <div class="canvas"><div id="suite"></div></div>
+    </div>
+    <div class="legend">
+      <span><b>F-01</b> is the required substrate — every pack extends it</span>
+      <span><b>━</b> depends on</span>
+      <span><b>AI add-on</b> is opt-in, cross-cutting</span>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2 id="modelTitle">Example model</h2>
+    <div class="explorer">
+      <div class="panel">
+        <div class="panel-head" id="modelHead"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span id="modelHeadName">// select a pack</span></div>
+        <div class="canvas"><div id="model"></div></div>
+      </div>
+      <div id="detail"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-row">
+    <div>© 2026 TURNING POINT STUDIO LLC · Oregon</div>
+    <div>Active build phase — publishes as each pack is complete</div>
+  </div>
+</footer>
+
+<script>
+const LCOL = {
+  strategy:["#f6e6c8","#c89a4e","#6e4f17"], business:["#fbf9d0","#b3a200","#5b5300"],
+  application:["#cfe4ff","#5a89c4","#1f3f63"], data:["#e9eef3","#9aa9b8","#3a4654"],
+  technology:["#d4f2d1","#5fae5f","#245d24"], motivation:["#ece0fb","#9c79c9","#4a3270"]
+};
+const LNAME = {strategy:"STRATEGY",business:"BUSINESS",application:"APPLICATION",data:"DATA",technology:"TECHNOLOGY",motivation:"MOTIVATION"};
+// customer-facing names — internal codes (F-01 etc.) are kept only as object keys, never shown
+const NAME = {
+  "F-01":["Utility Architecture Foundation","Foundation"],
+  "C-01":["NERC CIP Compliance Pack","Compliance"],
+  "T-01":["Transmission Operations Pack","Transmission"],
+  "D-02":["AMI & Metering Pack","Metering"],
+  "D-01":["DER & Grid Modernization Pack","DER / Grid Mod"],
+  "D-03":["Outage & ADMS Pack","Outage"],
+  "G-01":["Generation Operations Pack","Generation"],
+  "B-01+B-02":["AI Assistant Add-On","AI Assistant"],
+  "SVC":["Services","Services"]
+};
+const dname = id => (NAME[id]||[id,id])[0];
+const dtag  = id => (NAME[id]||[id,id])[1];
+function esc(s){return (s+"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function icon(kind,x,y,st){
+  let s=`<g stroke="${st}" stroke-width="1.3" fill="none">`;
+  if(["capability","service","bservice"].includes(kind)) s+=`<rect x="${x}" y="${y+3}" width="15" height="10" rx="5"/>`;
+  else if(kind=="function") s+=`<path d="M ${x} ${y+3} l 9 0 l 6 5 l -6 5 l -9 0 l 5 -5 z"/>`;
+  else if(kind=="component"){ s+=`<rect x="${x+3}" y="${y+2}" width="12" height="12"/><rect x="${x-1}" y="${y+4}" width="6" height="3.2" fill="${st}"/><rect x="${x-1}" y="${y+9}" width="6" height="3.2" fill="${st}"/>`; }
+  else if(kind=="data") s+=`<rect x="${x}" y="${y+2}" width="15" height="12"/><line x1="${x}" y1="${y+6}" x2="${x+15}" y2="${y+6}"/>`;
+  else if(kind=="node") s+=`<path d="M ${x} ${y+5} l 4 -3 l 11 0 l 0 9 l -4 3 l -11 0 z"/><path d="M ${x+15} ${y+2} l -4 3 l 0 9"/>`;
+  else if(kind=="requirement") s+=`<rect x="${x}" y="${y+3}" width="15" height="10"/><line x1="${x+3}" y1="${y+8}" x2="${x+12}" y2="${y+8}"/>`;
+  return s+"</g>";
+}
+const MK = `<defs>
+<marker id="serve" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#5b6b7b" stroke-width="1.4"/></marker>
+<marker id="real" markerWidth="14" markerHeight="14" refX="11" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#fff" stroke="#5b6b7b" stroke-width="1.3"/></marker>
+<marker id="acc" markerWidth="11" markerHeight="11" refX="8" refY="5" orient="auto"><path d="M2,1 L8,5 L2,9" fill="none" stroke="#5b6b7b" stroke-width="1.2"/></marker></defs>`;
+
+function renderModel(sku){
+  const head=document.getElementById('modelHeadName');
+  document.getElementById('modelTitle').textContent = dname(sku.id)+" — example model";
+  head.textContent = "// "+dtag(sku.id).toLowerCase().replace(/[^a-z0-9]+/g,'-')+" · "+(sku.slice||"reference slice");
+  const mpane=document.getElementById('model');
+  if(!sku.model){ mpane.innerHTML=`<div style="padding:60px 24px;text-align:center;color:#7d8590;font-family:'JetBrains Mono',monospace;font-size:13px">${sku.status=='roadmap'?'On the roadmap':'Backlog'} — overview only.<br>Worked model publishes with the pack.</div>`; return; }
+  const m=sku.model, W=760, BH=128, pad=14;
+  const layers=m.layers, H=layers.length*BH+pad*2;
+  const pos={};
+  let body=`<rect width="${W}" height="${H}" fill="#fff"/>`;
+  layers.forEach((lk,i)=>{
+    const y=pad+i*BH, c=LCOL[lk];
+    body+=`<rect x="20" y="${y}" width="${W-40}" height="${BH-10}" fill="${c[0]}" opacity="0.5"/>`;
+    body+=`<text x="32" y="${y+18}" font-family="'Segoe UI',Arial" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#6b7785">${LNAME[lk]}</text>`;
+    const nodes=m.nodes.filter(n=>n.layer==lk);
+    const slot=(W-60)/nodes.length;
+    nodes.forEach((n,j)=>{
+      const w=Math.min(slot-14,190), h=58, x=30+j*slot+(slot-14-w)/2+7, ny=y+30;
+      pos[n.id]={cx:x+w/2, y:ny, b:ny+h, x:x, w:w, h:h};
+      n._x=x; n._y=ny; n._w=w; n._h=h;
+    });
+  });
+  // relationships first (under boxes)
+  (m.rels||[]).forEach(r=>{
+    const a=pos[r[0]], b=pos[r[1]]; if(!a||!b) return;
+    let x1,y1,x2,y2;
+    if(b.y < a.y){ x1=a.cx; y1=a.y; x2=b.cx; y2=b.b; } else { x1=a.cx; y1=a.b; x2=b.cx; y2=b.y; }
+    const t=r[2], dash=(t=="real"||t=="access")?' stroke-dasharray="5 4"':'';
+    const mk = t=="real"?'url(#real)': t=="access"?'url(#acc)':'url(#serve)';
+    body+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#5b6b7b" stroke-width="1.4"${dash} marker-end="${mk}"/>`;
+  });
+  // boxes
+  m.nodes.forEach(n=>{
+    const c=LCOL[n.layer], rx=["capability","service","bservice"].includes(n.kind)?9:2;
+    body+=`<g class="el" data-el="${n.id}"><rect x="${n._x}" y="${n._y}" width="${n._w}" height="${n._h}" rx="${rx}" fill="${c[0]}" stroke="${c[1]}" stroke-width="1.6"/>`;
+    body+=icon(n.kind, n._x+n._w-20, n._y+4, c[1]);
+    const words=n.label.split(' '); let lines=[],cur=''; const maxc=Math.floor((n._w-26)/6.6);
+    words.forEach(wd=>{ if((cur+' '+wd).trim().length<=maxc) cur=(cur+' '+wd).trim(); else {lines.push(cur);cur=wd;} });
+    lines.push(cur); lines=lines.slice(0,2);
+    let ty=n._y+n._h/2-(lines.length-1)*8+(n.sub?-4:3);
+    lines.forEach((ln,i)=> body+=`<text x="${n._x+11}" y="${ty+i*15}" font-family="'Segoe UI',Arial" font-size="12.5" font-weight="600" fill="${c[2]}">${esc(ln)}</text>`);
+    if(n.sub) body+=`<text x="${n._x+11}" y="${n._y+n._h-9}" font-family="'Segoe UI',Arial" font-size="10" fill="${c[1]}">${esc(n.sub)}</text>`;
+    body+=`</g>`;
+  });
+  mpane.innerHTML=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${MK}${body}</svg>`;
+}
+
+function detailOverview(sku){
+  const st = sku.status=='available'?'<span class="pill ok">available now</span>': sku.status=='roadmap'?'<span class="pill road">on the roadmap</span>':'<span class="pill">backlog</span>';
+  let inside = (sku.inside||[]).map(x=>`<tr><td class="k"></td><td class="v">▸ ${esc(x)}</td></tr>`).join('');
+  document.getElementById('detail').innerHTML =
+   `<div class="d-head"><div class="d-kicker">${esc(sku.line)}</div><div class="d-title">${esc(dname(sku.id))}</div>${sku.price?`<div class="d-price">${esc(sku.price)}</div>`:''}</div>
+    <div class="d-body"><div class="d-what">${esc(sku.overview)}</div>
+    <table><tr><td class="k">Status</td><td class="v">${st}</td></tr>
+    <tr><td class="k">Depends on</td><td class="v">${sku.depends&&sku.depends.length?esc(sku.depends.map(dname).join(', ')):'— (the foundation)'}</td></tr>
+    ${sku.inside?`<tr><td class="k">Inside</td><td class="v"></td></tr>${inside}`:''}
+    </table>
+    <div style="margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#7d8590">${sku.model?'click an element in the model for detail →':''}</div></div>`;
+}
+function detailElement(sku,n){
+  let rows=(n.facts||[]).map(f=>`<tr><td class="k">${esc(f[0])}</td><td class="v">${esc(f[1])}</td></tr>`).join('');
+  document.getElementById('detail').innerHTML =
+   `<div class="d-head"><div class="d-kicker">${esc(dtag(sku.id))} · ${esc(LNAME[n.layer]||'')} layer</div><div class="d-title">${esc(n.label)}</div></div>
+    <div class="d-body"><div class="d-what">${esc(n.what||'')}</div><table>${rows}</table>
+    <div style="margin-top:16px"><a href="#" id="backOv" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#58a6ff">← back to ${esc(dtag(sku.id))} overview</a></div></div>`;
+  document.getElementById('backOv').onclick=(e)=>{e.preventDefault();detailOverview(sku);};
+}
+
+let ACTIVE=null;
+function selectSku(id){
+  const sku=CATALOG.find(s=>s.id==id); if(!sku) return; ACTIVE=sku;
+  document.querySelectorAll('.sku-node').forEach(el=>el.classList.toggle('active', el.dataset.sku==id));
+  renderModel(sku); detailOverview(sku);
+  document.getElementById('model').onclick=(e)=>{
+    const g=e.target.closest('.el'); if(!g) return;
+    const n=sku.model.nodes.find(x=>x.id==g.dataset.el); if(n){ detailElement(sku,n);
+      document.querySelectorAll('.el').forEach(x=>x.classList.remove('sel')); g.classList.add('sel'); }
+  };
+}
+
+function renderSuite(){
+  const W=900,H=380; let b=`<rect width="${W}" height="${H}" fill="#fff"/>`;
+  const node=(id,x,y,w,h,label,sub,status)=>{
+    const stroke = status=='available'?'#3a6ea5': status=='roadmap'?'#9aa9b8':'#c3ccd6';
+    const fill = status=='available'?'#eaf2fc': status=='roadmap'?'#f1f4f7':'#f7f9fb';
+    const dash = status=='available'?'':' stroke-dasharray="4 3"';
+    return `<g class="sku-node" data-sku="${id}"><rect class="nbox" x="${x}" y="${y}" width="${w}" height="${h}" rx="7" fill="${fill}" stroke="${stroke}" stroke-width="1.6"${dash}/>`
+     +`<text x="${x+12}" y="${y+22}" font-family="'JetBrains Mono',monospace" font-size="12.5" font-weight="700" fill="#1f3f63">${esc(dtag(id))}</text>`
+     +`<text x="${x+12}" y="${y+(sub?38:38)}" font-family="'Segoe UI',Arial" font-size="11.5" fill="#3a4654">${esc(label)}</text>`
+     +(sub?`<text x="${x+12}" y="${y+h-9}" font-family="'Segoe UI',Arial" font-size="9.5" fill="#7d8590">${esc(sub)}</text>`:'')+`</g>`;
+  };
+  // AI add-on cross-cutting bar (top)
+  b+=`<rect x="40" y="18" width="820" height="40" rx="7" fill="#f3ecfb" stroke="#9c79c9" stroke-width="1.6"/>`;
+  b+=`<g class="sku-node" data-sku="B-01+B-02"><rect class="nbox" x="40" y="18" width="820" height="40" rx="7" fill="transparent" stroke="transparent"/>`
+    +`<text x="56" y="43" font-family="'JetBrains Mono',monospace" font-size="12.5" font-weight="700" fill="#4a3270">AI Assistant Add-On</text>`
+    +`<text x="300" y="43" font-family="'Segoe UI',Arial" font-size="11.5" fill="#6a5a86">opt-in · runs on the architect's own models · cross-cutting</text></g>`;
+  // domain packs row
+  const packs=[["C-01","NERC CIP-002…014","","available"],["T-01","EMS/SCADA · market ops","","available"],
+    ["D-02","AMI · MDM · OpenADR","","roadmap"],["D-01","DER integration","","roadmap"],
+    ["D-03","OMS / ADMS · FLISR","","roadmap"],["G-01","dispatch · bidding","","roadmap"]];
+  const pw=128, gap=8, startX=(W-(pw*packs.length+gap*(packs.length-1)))/2;
+  packs.forEach((p,i)=>{ b+=node(p[0],startX+i*(pw+gap),120,pw,64,p[1],p[2],p[3]); });
+  // foundation
+  b+=node("F-01",170,250,560,66,"Utility Architecture Foundation","required substrate — every pack extends it","available");
+  // dependency lines pack->F-01
+  packs.forEach((p,i)=>{ const x=startX+i*(pw+gap)+pw/2; b+=`<line x1="${x}" y1="184" x2="${x>450?470:430}" y2="250" stroke="#9aa9b8" stroke-width="1.3"/>`; });
+  // AI cross-cut dashed to packs band
+  b+=`<line x1="450" y1="58" x2="450" y2="112" stroke="#9c79c9" stroke-width="1.3" stroke-dasharray="5 4"/>`;
+  // services footnote chip
+  b+=`<g class="sku-node" data-sku="SVC"><rect class="nbox" x="170" y="336" width="560" height="30" rx="6" fill="#f7f9fb" stroke="#c3ccd6" stroke-width="1.4" stroke-dasharray="4 3"/>`
+    +`<text x="186" y="356" font-family="'JetBrains Mono',monospace" font-size="11" fill="#3a4654">Services — onboarding · customization · advisory · training</text></g>`;
+  document.getElementById('suite').innerHTML=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${b}</svg>`;
+  document.getElementById('suite').onclick=(e)=>{ const g=e.target.closest('.sku-node'); if(g) selectSku(g.dataset.sku); };
+}
+
+// ===================== CATALOG DATA =====================
+const f=(k,v)=>[k,v];
+const CATALOG=[
+{ id:"F-01", name:"EA Meta-Model Foundation", line:"Building block", status:"available", price:"$12K – $18K", depends:[], slice:"foundation — AMI / metering slice",
+  overview:"The substrate every other pack extends. A domain-tuned ArchiMate meta-model, a utility capability catalog, a canonical data model with CIM mappings, and an integration pattern library. License it alone as an EA starter kit, or as the base the domain packs plug into.",
+  inside:["ArchiMate meta-model (.archimate)","Capability catalog (levels 1–3)","Canonical data model + CIM mapping","Integration pattern library","Customization contract (stable/pluggable/forbidden)","Maturity assessment template"],
+  model:{ layers:["strategy","business","application","data","technology"], nodes:[
+    {id:"c_met",layer:"strategy",kind:"capability",label:"Metering & Measurement",what:"Strategy-layer capability — the utility's ability to measure consumption across the territory.",facts:[f("Layer","Strategy"),f("Realized by","Field & Meter Operations"),f("Catalog","Level 1–2, extensible to L4+")]},
+    {id:"c_out",layer:"strategy",kind:"capability",label:"Outage Management",what:"Capability for detecting, managing, and restoring service interruptions.",facts:[f("Layer","Strategy"),f("Extended by","the Outage & ADMS pack")]},
+    {id:"c_bil",layer:"strategy",kind:"capability",label:"Billing & Revenue",what:"Capability covering rating, billing, and revenue assurance.",facts:[f("Layer","Strategy"),f("Realized by","Meter-to-Cash")]},
+    {id:"b_ops",layer:"business",kind:"function",label:"Field & Meter Operations",what:"Business function that operates metering and field assets.",facts:[f("Layer","Business"),f("Realizes","Metering, Outage capabilities")]},
+    {id:"b_m2c",layer:"business",kind:"bservice",label:"Meter-to-Cash",what:"End-to-end business service from meter read to settled bill.",facts:[f("Layer","Business"),f("Realizes","Billing & Revenue")]},
+    {id:"a_ami",layer:"application",kind:"component",label:"AMI Head-End System",what:"Collects interval reads from the metering network.",facts:[f("Layer","Application"),f("Serves","Field & Meter Operations"),f("Accesses","Meter")]},
+    {id:"a_mdm",layer:"application",kind:"component",label:"Meter Data Management",sub:"MDM",what:"Validates, estimates, and stores interval usage (VEE).",facts:[f("Layer","Application"),f("Realizes","Usage Aggregation"),f("Accesses","Usage Reading, Service Point")]},
+    {id:"a_cis",layer:"application",kind:"component",label:"CIS / Billing",what:"Customer information and billing system.",facts:[f("Layer","Application"),f("Serves","Meter-to-Cash"),f("Accesses","Customer")]},
+    {id:"a_agg",layer:"application",kind:"service",label:"Usage Aggregation",what:"Application service that aggregates interval data for billing determinants.",facts:[f("Layer","Application"),f("Serves","Meter-to-Cash")]},
+    {id:"d_met",layer:"data",kind:"data",label:"Meter",what:"Canonical entity for a metering device.",facts:[f("Layer","Data"),f("Attributes","meter_id · type · install_date · status"),f("CIM","IEC 61968 Meter")]},
+    {id:"d_sp",layer:"data",kind:"data",label:"Service Point",what:"Point of electrical service delivery.",facts:[f("Layer","Data"),f("CIM","IEC 61968 ServiceDeliveryPoint")]},
+    {id:"d_use",layer:"data",kind:"data",label:"Usage Reading",what:"Interval or register reading.",facts:[f("Layer","Data"),f("Attributes","interval · value · uom · timestamp"),f("CIM","IEC 61968 IntervalReading")]},
+    {id:"d_cus",layer:"data",kind:"data",label:"Customer",what:"Account-holding customer.",facts:[f("Layer","Data"),f("CIM","IEC 61968 Customer")]},
+    {id:"t_net",layer:"technology",kind:"node",label:"AMI Network",sub:"RF mesh",what:"Field communications network for meters.",facts:[f("Layer","Technology"),f("Serves","AMI Head-End")]},
+    {id:"t_bus",layer:"technology",kind:"node",label:"Integration Bus",sub:"publish / subscribe",what:"Messaging backbone between systems.",facts:[f("Layer","Technology"),f("Pattern","publish / subscribe"),f("Serves","MDM, CIS")]},
+    {id:"t_mdm",layer:"technology",kind:"node",label:"MDM Platform",what:"Hosting platform for the MDM application.",facts:[f("Layer","Technology"),f("Serves","CIS / Billing")]}
+  ], rels:[["b_ops","c_met","real"],["b_ops","c_out","real"],["b_m2c","c_bil","real"],
+    ["a_ami","b_ops","serve"],["a_mdm","b_ops","serve"],["a_cis","b_m2c","serve"],["a_agg","b_m2c","serve"],["a_mdm","a_agg","real"],
+    ["a_ami","d_met","access"],["a_mdm","d_use","access"],["a_mdm","d_sp","access"],["a_cis","d_cus","access"],
+    ["t_net","a_ami","serve"],["t_bus","a_mdm","serve"],["t_mdm","a_cis","serve"]] } },
+
+{ id:"C-01", name:"NERC CIP Compliance Architecture Pack", line:"Building block", status:"available", price:"$25K – $35K", depends:["F-01"], slice:"control-to-capability overlay",
+  overview:"CIP-002 through CIP-014 compliance-aware architecture for BES-registered entities. Maps controls to capabilities and the systems that realize them, so a compliance review starts from a defensible, modeled baseline. Plugs into the Foundation as a motivation + overlay extension.",
+  inside:["CIP-002…CIP-014 control mappings","BES Cyber Asset categorization","BCSI handling architecture","Evidence-collection model","Audit-defensible documentation templates"],
+  model:{ layers:["motivation","strategy","application"], nodes:[
+    {id:"r2",layer:"motivation",kind:"requirement",label:"BES Asset Identification",sub:"CIP-002",what:"Requirement to identify and categorize BES Cyber Systems.",facts:[f("Standard","CIP-002"),f("Realized by","BES Cyber Asset Mgmt")]},
+    {id:"r5",layer:"motivation",kind:"requirement",label:"Electronic Security Perimeter",sub:"CIP-005",what:"Requirement for electronic access controls around the ESP.",facts:[f("Standard","CIP-005"),f("Realized by","Electronic Access Control")]},
+    {id:"r7",layer:"motivation",kind:"requirement",label:"System Security Management",sub:"CIP-007",what:"Requirement for ports, patching, malware, and logging controls.",facts:[f("Standard","CIP-007"),f("Realized by","Security Event Monitoring")]},
+    {id:"r11",layer:"motivation",kind:"requirement",label:"BCSI Protection",sub:"CIP-011",what:"Requirement to protect BES Cyber System Information.",facts:[f("Standard","CIP-011"),f("Realized by","Information Protection")]},
+    {id:"p2",layer:"strategy",kind:"capability",label:"BES Cyber Asset Mgmt",what:"Capability to inventory and categorize cyber assets.",facts:[f("Layer","Strategy"),f("Realizes","CIP-002"),f("Served by","Asset Registry")]},
+    {id:"p5",layer:"strategy",kind:"capability",label:"Electronic Access Control",what:"Capability governing electronic access to the ESP.",facts:[f("Layer","Strategy"),f("Realizes","CIP-005")]},
+    {id:"p7",layer:"strategy",kind:"capability",label:"Security Event Monitoring",what:"Capability for collecting and reviewing security events.",facts:[f("Layer","Strategy"),f("Realizes","CIP-007")]},
+    {id:"p11",layer:"strategy",kind:"capability",label:"Information Protection",what:"Capability for classifying and protecting BCSI.",facts:[f("Layer","Strategy"),f("Realizes","CIP-011")]},
+    {id:"s2",layer:"application",kind:"component",label:"Asset Registry",what:"System of record for cyber asset inventory.",facts:[f("Layer","Application"),f("Serves","BES Cyber Asset Mgmt")]},
+    {id:"s5",layer:"application",kind:"component",label:"ESP Firewall / IDS",what:"Perimeter enforcement and intrusion detection.",facts:[f("Layer","Application"),f("Serves","Electronic Access Control")]},
+    {id:"s7",layer:"application",kind:"component",label:"SIEM / Log Mgmt",what:"Security event aggregation and correlation.",facts:[f("Layer","Application"),f("Serves","Security Event Monitoring")]},
+    {id:"s11",layer:"application",kind:"component",label:"BCSI Vault",what:"Controlled store for sensitive cyber information.",facts:[f("Layer","Application"),f("Serves","Information Protection")]}
+  ], rels:[["p2","r2","real"],["p5","r5","real"],["p7","r7","real"],["p11","r11","real"],
+    ["s2","p2","serve"],["s5","p5","serve"],["s7","p7","serve"],["s11","p11","serve"]] } },
+
+{ id:"T-01", name:"Transmission Operations Reference Architecture", line:"Building block", status:"available", price:"$20K – $30K", depends:["F-01"], slice:"EMS / market-ops slice",
+  overview:"EMS/SCADA, congestion management, FERC Order 890 (OASIS/ATC/tagging), and ISO/RTO market interactions, with the OT/IT seam and a NERC CIP overlay. Extends the Foundation with transmission capabilities, applications, and the control-center technology layer.",
+  inside:["EMS/SCADA reference architecture","OASIS / ATC / e-Tag patterns","ISO/RTO market interaction model","OT/IT seam + CIP overlay hooks","Network model & schedule data"],
+  model:{ layers:["strategy","business","application","data","technology"], nodes:[
+    {id:"tc_ops",layer:"strategy",kind:"capability",label:"Transmission Operations",what:"Capability to operate the transmission system reliably.",facts:[f("Layer","Strategy"),f("Standards","NERC TOP/IRO")]},
+    {id:"tc_cong",layer:"strategy",kind:"capability",label:"Congestion Management",what:"Capability to manage flows within limits.",facts:[f("Layer","Strategy")]},
+    {id:"tc_mkt",layer:"strategy",kind:"capability",label:"Market Settlement",what:"Capability for market participation and settlement.",facts:[f("Layer","Strategy"),f("Standards","FERC Order 890")]},
+    {id:"tb_rc",layer:"business",kind:"function",label:"Reliability Coordination",what:"Business function maintaining real-time reliability.",facts:[f("Layer","Business"),f("Realizes","Transmission Operations")]},
+    {id:"tb_oasis",layer:"business",kind:"bservice",label:"ATC / OASIS Posting",what:"Service for posting available transfer capability and tags.",facts:[f("Layer","Business"),f("Realizes","Market Settlement")]},
+    {id:"ta_ems",layer:"application",kind:"component",label:"EMS / SCADA",what:"Energy management and supervisory control.",facts:[f("Layer","Application"),f("Serves","Reliability Coordination"),f("Accesses","Network Model")]},
+    {id:"ta_oasis",layer:"application",kind:"component",label:"OASIS Node",what:"Open-access same-time information system interface.",facts:[f("Layer","Application"),f("Serves","ATC / OASIS Posting")]},
+    {id:"ta_mkt",layer:"application",kind:"component",label:"Market Interface",what:"ISO/RTO bid, schedule, and settlement interface.",facts:[f("Layer","Application"),f("Accesses","Schedule")]},
+    {id:"td_net",layer:"data",kind:"data",label:"Network Model",what:"As-operated transmission network model.",facts:[f("Layer","Data"),f("CIM","IEC 61970 (CPSM)")]},
+    {id:"td_sch",layer:"data",kind:"data",label:"Schedule / e-Tag",what:"Interchange schedules and NERC e-Tags.",facts:[f("Layer","Data"),f("Standard","NAESB e-Tag")]},
+    {id:"tt_cc",layer:"technology",kind:"node",label:"Control Center",what:"Primary/backup control-center infrastructure.",facts:[f("Layer","Technology"),f("Overlay","NERC CIP high-impact")]},
+    {id:"tt_iccp",layer:"technology",kind:"node",label:"ICCP Link",what:"Inter-control-center communications to the ISO/RTO.",facts:[f("Layer","Technology"),f("Protocol","ICCP / TASE.2")]}
+  ], rels:[["tb_rc","tc_ops","real"],["tb_rc","tc_cong","real"],["tb_oasis","tc_mkt","real"],
+    ["ta_ems","tb_rc","serve"],["ta_oasis","tb_oasis","serve"],["ta_mkt","tb_oasis","serve"],
+    ["ta_ems","td_net","access"],["ta_mkt","td_sch","access"],["ta_oasis","td_sch","access"],
+    ["tt_cc","ta_ems","serve"],["tt_iccp","ta_mkt","serve"]] } },
+
+{ id:"D-02", name:"AMI / Metering Reference Architecture", line:"Building block", status:"roadmap", price:"$18K – $28K", depends:["F-01"], slice:"head-end to MDM",
+  overview:"Head-end, MDM, MV90, and OpenADR reference architecture for distribution utilities and energy-services providers. A deeper, distribution-specific build of the metering slice the Foundation introduces at foundation level.",
+  inside:["Head-end & collection engine patterns","MDM / VEE reference","MV90 & C&I metering","OpenADR / demand response hooks"],
+  model:{ layers:["strategy","application","data","technology"], nodes:[
+    {id:"dc_met",layer:"strategy",kind:"capability",label:"Advanced Metering",what:"Capability for interval metering and remote operations.",facts:[f("Layer","Strategy")]},
+    {id:"dc_dr",layer:"strategy",kind:"capability",label:"Demand Response",what:"Capability to dispatch load via OpenADR.",facts:[f("Layer","Strategy"),f("Standard","OpenADR 2.0")]},
+    {id:"da_he",layer:"application",kind:"component",label:"Head-End System",what:"Collects and commands meters.",facts:[f("Layer","Application"),f("Accesses","Meter")]},
+    {id:"da_mdm",layer:"application",kind:"component",label:"MDM (VEE)",what:"Validation, estimation, editing of interval data.",facts:[f("Layer","Application"),f("Accesses","Interval Reading")]},
+    {id:"da_adr",layer:"application",kind:"component",label:"OpenADR VTN",what:"Virtual top node for demand-response signals.",facts:[f("Layer","Application"),f("Serves","Demand Response")]},
+    {id:"dd_met",layer:"data",kind:"data",label:"Meter",what:"Metering device entity (extends F-01 canonical).",facts:[f("Layer","Data"),f("CIM","IEC 61968 Meter")]},
+    {id:"dd_iv",layer:"data",kind:"data",label:"Interval Reading",what:"Time-series interval usage.",facts:[f("Layer","Data")]},
+    {id:"dt_rf",layer:"technology",kind:"node",label:"RF Mesh / Cellular",what:"Field area network.",facts:[f("Layer","Technology")]},
+    {id:"dt_bus",layer:"technology",kind:"node",label:"Integration Bus",what:"Messaging backbone.",facts:[f("Layer","Technology")]}
+  ], rels:[["da_he","dc_met","serve"],["da_adr","dc_dr","serve"],["da_he","dd_met","access"],["da_mdm","dd_iv","access"],["dt_rf","da_he","serve"],["dt_bus","da_mdm","serve"]] } },
+
+{ id:"G-01", name:"Generation Operations Reference Architecture", line:"Building block", status:"roadmap", price:"est. $20K – $30K", depends:["F-01"], slice:"dispatch & market slice",
+  overview:"Generation and dispatch reference architecture — plant interface, AGC/dispatch, market bidding, and unit outage coordination. Currently roadmap (v3 Generation Asset Management); shown here as a worked example of how a generation pack extends the Foundation.",
+  inside:["Plant DCS / historian interface","AGC & economic dispatch","ISO/RTO bidding & settlement","Unit outage coordination"],
+  model:{ layers:["strategy","application","data","technology"], nodes:[
+    {id:"gc_disp",layer:"strategy",kind:"capability",label:"Generation Dispatch",what:"Capability to dispatch units economically and reliably.",facts:[f("Layer","Strategy")]},
+    {id:"gc_opt",layer:"strategy",kind:"capability",label:"Portfolio Optimization",what:"Capability to optimize the generation portfolio against the market.",facts:[f("Layer","Strategy")]},
+    {id:"ga_agc",layer:"application",kind:"component",label:"AGC / Dispatch",what:"Automatic generation control and economic dispatch.",facts:[f("Layer","Application"),f("Accesses","Telemetry")]},
+    {id:"ga_bid",layer:"application",kind:"component",label:"Market Bidding",what:"Builds and submits unit bids to the ISO/RTO.",facts:[f("Layer","Application"),f("Accesses","Bid / Offer")]},
+    {id:"gd_tel",layer:"data",kind:"data",label:"Telemetry",what:"Real-time unit telemetry.",facts:[f("Layer","Data")]},
+    {id:"gd_bid",layer:"data",kind:"data",label:"Bid / Offer",what:"Market bid and offer data.",facts:[f("Layer","Data")]},
+    {id:"gt_dcs",layer:"technology",kind:"node",label:"Plant DCS",what:"Distributed control system at the plant.",facts:[f("Layer","Technology"),f("Overlay","NERC CIP medium/high")]},
+    {id:"gt_iccp",layer:"technology",kind:"node",label:"ICCP to ISO",what:"Telemetry/control link to the market operator.",facts:[f("Layer","Technology"),f("Protocol","ICCP / TASE.2")]}
+  ], rels:[["ga_agc","gc_disp","serve"],["ga_bid","gc_opt","serve"],["ga_agc","gd_tel","access"],["ga_bid","gd_bid","access"],["gt_dcs","ga_agc","serve"],["gt_iccp","ga_bid","serve"]] } },
+
+{ id:"B-01+B-02", name:"AI Add-On — Prompt Library + Connector", line:"AI add-on (opt-in)", status:"roadmap", price:"$8K – $15K / yr", depends:["F-01"], slice:"runs on the architect's models",
+  overview:"Opt-in. A connector exposes the architect's own .archimate models to a prompt-runner, and a viewpoint-specific prompt library produces gap analysis, compliance-coverage checks, and decision/stakeholder documents. Customer brings their own AI credentials; licensed separately so a CISO's AI review never blocks the core packs.",
+  inside:["Viewpoint-specific prompt library","Python / Archi connector","Local or cloud LLM backends","Eval harness — every output graded before ship"],
+  model:{ layers:["data","application","technology","strategy"], nodes:[
+    {id:"bi_mod",layer:"data",kind:"data",label:"Architect's .archimate models",what:"The customer's own models — never leaves their control without consent.",facts:[f("Input","Customer-owned"),f("Boundary","BYO credentials")]},
+    {id:"ba_conn",layer:"application",kind:"component",label:"Archi Connector",sub:"connector",what:"Exposes model elements as typed objects to the prompt-runner.",facts:[f("Layer","Application"),f("Accesses","the models")]},
+    {id:"ba_prompt",layer:"application",kind:"component",label:"Prompt Library",sub:"prompts",what:"Viewpoint-specific prompts (capability gap, compliance map, stakeholder brief).",facts:[f("Layer","Application"),f("Flagship","Capability Gap")]},
+    {id:"ba_eval",layer:"application",kind:"component",label:"Eval Harness",what:"Grades every output before it is shown (3-gate, tiered 18–19/20).",facts:[f("Layer","Application"),f("Rule","abstain when input insufficient")]},
+    {id:"bt_llm",layer:"technology",kind:"node",label:"LLM Backend",sub:"local or cloud",what:"Claude / OpenAI / Ollama — customer's choice and location.",facts:[f("Layer","Technology"),f("BCSI","local-model path for sensitive data")]},
+    {id:"bo_gap",layer:"strategy",kind:"capability",label:"Gap & Compliance Findings",what:"Capability-gap analysis and compliance-coverage output (draft, human-reviewed).",facts:[f("Output","Draft only"),f("Compliance/ops","red-light: verify against source")]},
+    {id:"bo_doc",layer:"strategy",kind:"capability",label:"Decision & Stakeholder Docs",what:"Drafted ADRs and stakeholder briefs.",facts:[f("Output","Draft only"),f("Footer","AI-assistance disclosed")]}
+  ], rels:[["ba_conn","bi_mod","access"],["ba_conn","ba_prompt","serve"],["ba_prompt","ba_eval","serve"],["bt_llm","ba_prompt","serve"],["ba_eval","bo_gap","serve"],["ba_eval","bo_doc","serve"]] } },
+
+{ id:"D-01", name:"DER Integration / Grid Modernization", line:"Building block", status:"roadmap", price:"$25K – $35K", depends:["F-01"], overview:"DER integration reference architecture for distribution utilities and public power. On the roadmap (v2); extends the Foundation with DER, DERMS, and interconnection patterns." },
+{ id:"D-03", name:"OMS / ADMS Reference Architecture", line:"Building block", status:"roadmap", price:"$20K – $30K", depends:["F-01"], overview:"Outage management, switching, and FLISR for distribution utilities. On the roadmap (v2); extends the Foundation's Outage Management capability." },
+{ id:"SVC", name:"Services", line:"Services line", status:"available", price:"fixed-fee & retainer", depends:[], overview:"The backstop around the products: onboarding, extended customization, custom building-block development, an advisory retainer, fractional EA, and training workshops. Capped at roughly 20% of steady-state time — the products lead, services support." }
+];
+
+renderSuite();
+selectSku("F-01");
+</script>
+</body>
+</html>

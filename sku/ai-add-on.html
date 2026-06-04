@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Add-On (B-01 + B-02) — Turning Point Studio</title>
+<meta name="description" content="The Turning Point Studio AI add-on — a curated prompt library and Python/Archi connector that operate on the building blocks' structured data. Opt-in, customer-owned credentials, local or cloud LLM backends.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../brand/favicon-32.png">
+<link rel="alternate icon" href="../brand/favicon.ico">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<meta property="og:image" content="https://turningpointstudio.net/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="draft-banner">
+  <strong>Draft v2.0</strong> &nbsp;·&nbsp; Internal review only — not for publication.
+</div>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="../index-v2-draft.html" class="brand">
+      <img class="brand-mark" src="../brand/enso-mark.png" alt="Turning Point Studio mark">
+      Turning Point <span>Studio</span>
+    </a>
+    <nav>
+      <a href="../index-v2-draft.html#catalog">Catalog</a>
+      <a href="../index-v2-draft.html#ai">AI Add-On</a>
+      <a href="../index-v2-draft.html#process">Process</a>
+      <a href="../index-v2-draft.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index-v2-draft.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index-v2-draft.html#ai">AI Add-On</a>
+    <span class="sep">/</span>
+    <span>B-01 + B-02</span>
+  </div>
+</div>
+
+<div class="sku-hero">
+  <div class="container">
+    <span class="sku-id-badge">B-01 + B-02</span>
+    <span class="status-pill planned">Ships month 9+</span>
+    <h1>AI Add-On — Prompt Library &amp; Python/Archi Connector</h1>
+    <p class="tagline">A curated, viewpoint-specific prompt library plus a local connector that exposes ArchiMate model data to a prompt-runner. Operates on the building blocks' structured data, not on free-form utility documents. Sold separately from the building blocks so a CISO review of the AI layer never blocks the core license.</p>
+
+    <div class="sku-hero-meta">
+      <div class="meta-block">
+        <div class="meta-label">Bundle (B-01 + B-02)</div>
+        <div class="meta-value">$8,000 – $15,000 / yr</div>
+        <div class="meta-sub">Annual subscription · tied to building-block license</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">B-01 alone</div>
+        <div class="meta-value">$5,000 – $9,000 / yr</div>
+        <div class="meta-sub">Prompts only — bring your own connector</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Dependency</div>
+        <div class="meta-value"><a href="f-01.html">F-01</a></div>
+        <div class="meta-sub">Building-block license required</div>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="../index-v2-draft.html#contact" class="btn btn-primary">Add to a license</a>
+      <a href="#data-handling" class="btn btn-secondary">How is data handled?</a>
+    </div>
+  </div>
+</div>
+
+<!-- POSITIONING -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Positioning</div>
+    <h2>Structured-data tooling, not "AI to run the utility."</h2>
+    <p class="section-lede">The studio doesn't sell AI as something to run a utility. It sells curated tooling that lets EA, SA, and BA teams accelerate analysis of their own architecture — when that architecture is already captured in the structured form the building blocks define.</p>
+    <p>The add-on operates on ArchiMate model data, capability maps, and the canonical data model. It does not analyze free-form documents, summarize incident reports, or generate operational decisions. Customer brings their own AI credentials. The studio never receives the customer's model data.</p>
+  </div>
+</section>
+
+<!-- TWO COMPONENTS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Two components</div>
+    <h2>What ships in the add-on</h2>
+
+    <div class="dual-block">
+      <div class="dual-col">
+        <h3>B-01 · AI Prompt Library</h3>
+        <p>10–12 versioned, viewpoint-specific prompts with explicit input/output schemas. Each prompt is benchmarked against an internal eval set so regressions are detectable when models change.</p>
+        <ul>
+          <li>Capability Gap Analysis (as-is vs. building-block reference)</li>
+          <li>Application Cooperation Review</li>
+          <li>Application Consolidation Candidates</li>
+          <li>Data Quality / Canonical-Model Conformance</li>
+          <li>Integration Pattern Recommendation</li>
+          <li>Compliance Control Mapping Check</li>
+          <li>Maturity Heat-Map Generator</li>
+          <li>Roadmap Sequencing Assistant</li>
+          <li>Architecture Decision Record (ADR) Drafter</li>
+          <li>Stakeholder Brief Generator</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>B-02 · Python/Archi Connector</h3>
+        <p>Open-source-friendly local tooling that exposes <code>.archimate</code> model data to a prompt-runner. Runs entirely on customer-controlled systems; the studio never sees customer model data.</p>
+        <ul>
+          <li>Read <code>.archimate</code> files, extract elements and relationships</li>
+          <li>Project ArchiMate views into the prompt input schema</li>
+          <li>Run prompts against multiple LLM backends</li>
+          <li>Cloud backends: Anthropic Claude, OpenAI</li>
+          <li>Local backend: Ollama (full air-gap option)</li>
+          <li>Output handling — JSON, CSV, ADR Markdown, ArchiMate update files</li>
+          <li>Customer-owned credentials, never transmitted to the studio</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Pricing</div>
+    <h2>Annual subscription, three configurations</h2>
+
+    <table class="tier-table-full">
+      <thead>
+        <tr><th>SKU</th><th>What it includes</th><th>Mid-tier price</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr class="listed">
+          <td class="tier-name">B-01 + B-02 bundle</td>
+          <td>Prompts + connector + Ollama support</td>
+          <td class="price">$8,000 – $15,000 / yr</td>
+          <td>Recommended for most customers</td>
+        </tr>
+        <tr>
+          <td class="tier-name">B-01 alone</td>
+          <td>Prompts only, BYO connector</td>
+          <td class="price">$5,000 – $9,000 / yr</td>
+          <td>For customers with existing tooling</td>
+        </tr>
+        <tr>
+          <td class="tier-name">Custom prompt development</td>
+          <td>Bespoke prompt authoring (services)</td>
+          <td class="price">$1,500 – $5,000 / prompt</td>
+          <td>S-03 services line item</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 14px; color: var(--muted); margin-top: 20px;">Tier multipliers from the building-block pricing apply to the AI add-on as well. Customers on Small / Large / Reseller tiers see the corresponding multiplier on B-01 and B-01+B-02.</p>
+  </div>
+</section>
+
+<!-- DATA HANDLING -->
+<section id="data-handling">
+  <div class="container">
+    <div class="section-eyebrow">Data handling</div>
+    <h2>How customer data flows</h2>
+    <p class="section-lede">This is the section a CISO or security review will read first. The architecture is built around "the studio never receives customer model data" — a property that holds whether the customer chooses a cloud or local LLM backend.</p>
+
+    <div class="deps-block">
+      <div class="deps-diagram">                Customer environment
+   ┌─────────────────────────────────────────────────┐
+   │                                                 │
+   │   .archimate file ── B-02 connector ── prompt   │
+   │                          │              │        │
+   │                          │              │        │
+   │                    customer-owned       │        │
+   │                    credentials          │        │
+   │                          │              │        │
+   └──────────────────────────┼──────────────┼────────┘
+                              │              │
+                              ▼              ▼
+                      ┌───────────────┐  ┌─────────────┐
+                      │ Cloud LLM API │  │ Local Ollama│
+                      │ (Anthropic /  │  │ (air-gapped │
+                      │  OpenAI)      │  │   option)   │
+                      └───────────────┘  └─────────────┘
+
+      Turning Point Studio sits outside both paths.
+      Studio receives: license activation. Studio receives never:
+      customer model data, prompt inputs, prompt outputs.</div>
+      <div class="deps-note"><strong>What the studio sees:</strong> license activation calls and update-channel pulls. <strong>What the studio never sees:</strong> customer ArchiMate models, prompt content, prompt outputs, LLM responses. <strong>Air-gap option:</strong> customers on Ollama have zero outbound LLM traffic — the entire prompt run is local.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SEPARATE -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Why the AI add-on is licensed separately</div>
+    <h2>So a CISO review of AI never blocks a building-block license.</h2>
+    <p class="section-lede">If the AI capability were bundled into F-01, every C-01 / T-01 customer would have to clear an AI security review before licensing the core architecture. That review can take 6–12 months at a typical utility. Decoupling means the building blocks ship cleanly while the AI layer goes through its own separate review on its own timeline.</p>
+
+    <div class="dual-block">
+      <div class="dual-col">
+        <h3>Customer benefit</h3>
+        <ul>
+          <li>License F-01 / C-01 / T-01 without an AI security review.</li>
+          <li>Add the AI layer later — even years later — without re-licensing the building blocks.</li>
+          <li>Trial Ollama (local) before committing to cloud LLM use.</li>
+          <li>Cancel the AI subscription without losing access to the building blocks.</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>Studio benefit</h3>
+        <ul>
+          <li>Building-block sales aren't gated by AI risk reviews.</li>
+          <li>The AI layer can be priced as recurring (subscription) without forcing the building block into the same model.</li>
+          <li>AI tooling can change — models replaced, prompts revised — without renegotiating the building-block license.</li>
+          <li>Customers who never want AI can still be the studio's customers.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN QUESTIONS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Build status &amp; open questions</div>
+    <h2>What's still being decided</h2>
+
+    <ul class="questions-list">
+      <li>
+        <strong>Phase 1 prompt count</strong>
+        AI Realist's view: ship 3–4 prompts in Phase 1 with high signal-to-noise and a real eval set, not all 10–12. The connector matters more than the prompts; prompts get replaced, the connector compounds. Current plan: ship Capability Gap, Application Cooperation, Compliance Mapping Check, and Stakeholder Brief in Phase 1.
+      </li>
+      <li>
+        <strong>Eval set construction</strong>
+        Internal eval set for each prompt — ground-truth examples that detect regression when models change. How many examples per prompt? Currently planning 8–12 per prompt minimum.
+      </li>
+      <li>
+        <strong>Local model support depth</strong>
+        Ollama is the v1 local backend. Performance varies by prompt — some prompts work well on local 8B-class models, others need 70B+. Document the trade-off explicitly.
+      </li>
+      <li>
+        <strong>Output schema stability</strong>
+        Prompt outputs need stable schemas if they're going to be ingested by downstream tools. Schema versioning vs. permissive parsing — leaning toward strict versioned schemas.
+      </li>
+      <li>
+        <strong>Connector as open source</strong>
+        Open the connector for community contribution vs. license-protected like the prompts? Trade-off: openness accelerates adoption vs. dilutes the subscription value.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Pairs well with</div>
+    <h2>Building blocks the AI add-on operates on</h2>
+    <div class="related-grid">
+      <a class="related-card" href="f-01.html">
+        <div class="rc-id">F-01</div>
+        <div class="rc-name">Meta-Model Foundation</div>
+        <div class="rc-desc">Required. The AI add-on operates on F-01's structured artifacts.</div>
+      </a>
+      <a class="related-card" href="c-01.html">
+        <div class="rc-id">C-01</div>
+        <div class="rc-name">NERC CIP Compliance Pack</div>
+        <div class="rc-desc">The Compliance Control Mapping Check prompt is the most-used C-01 companion.</div>
+      </a>
+      <a class="related-card" href="t-01.html">
+        <div class="rc-id">T-01</div>
+        <div class="rc-name">Transmission Operations</div>
+        <div class="rc-desc">Stakeholder Brief Generator and Application Cooperation Review are top T-01 use cases.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <h3>Add the AI layer to a building-block license</h3>
+      <p>Email the studio with the building block(s) you've licensed (or are licensing), whether you want the connector or B-01 alone, and your LLM backend preference (cloud or local). Customer-owned credentials throughout.</p>
+      <div class="hero-ctas">
+        <a href="../index-v2-draft.html#contact" class="btn btn-primary">Add B-01 + B-02</a>
+        <a href="../index-v2-draft.html#faq" class="btn btn-secondary">AI data-handling FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-row">
+      <div>&copy; 2026 TURNING POINT STUDIO LLC &middot; Oregon SOS #257142696</div>
+      <div class="footer-links">
+        <a href="../index-v2-draft.html#catalog">Catalog</a>
+        <a href="../index-v2-draft.html#process">Licensing</a>
+        <a href="../index-v2-draft.html#faq">FAQ</a>
+        <a href="../index-v2-draft.html#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

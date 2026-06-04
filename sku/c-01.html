@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C-01 · NERC CIP Compliance Architecture Pack — Turning Point Studio</title>
+<meta name="description" content="C-01 is the NERC CIP-002 through CIP-014 compliance architecture pack for BES-registered entities. Control mappings, BCSI handling, evidence collection, audit-defensible documentation.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../brand/favicon-32.png">
+<link rel="alternate icon" href="../brand/favicon.ico">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<meta property="og:image" content="https://turningpointstudio.net/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="draft-banner">
+  <strong>Draft v2.0</strong> &nbsp;·&nbsp; Internal review only — not for publication.
+</div>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="../index-v2-draft.html" class="brand">
+      <img class="brand-mark" src="../brand/enso-mark.png" alt="Turning Point Studio mark">
+      Turning Point <span>Studio</span>
+    </a>
+    <nav>
+      <a href="../index-v2-draft.html#catalog">Catalog</a>
+      <a href="../index-v2-draft.html#ai">AI Add-On</a>
+      <a href="../index-v2-draft.html#process">Process</a>
+      <a href="../index-v2-draft.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index-v2-draft.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index-v2-draft.html#catalog">Catalog</a>
+    <span class="sep">/</span>
+    <span>C-01</span>
+  </div>
+</div>
+
+<div class="sku-hero">
+  <div class="container">
+    <span class="sku-id-badge">C-01</span>
+    <span class="status-pill build">Phase 1 build · ships month 6–9</span>
+    <h1>NERC CIP Compliance Architecture Pack</h1>
+    <p class="tagline">CIP-002 through CIP-014 compliance-aware architecture for BES-registered entities. Control mappings, BCSI handling patterns, BES Cyber Asset categorization, evidence-collection design, and the documentation auditors actually want to see.</p>
+
+    <div class="sku-hero-meta">
+      <div class="meta-block">
+        <div class="meta-label">License (mid-tier)</div>
+        <div class="meta-value">$25,000 – $35,000</div>
+        <div class="meta-sub">Perpetual single-organization license</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Annual maintenance</div>
+        <div class="meta-value">$5,000 – $7,000</div>
+        <div class="meta-sub">20% · regulatory updates included</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Dependency</div>
+        <div class="meta-value"><a href="f-01.html">F-01</a></div>
+        <div class="meta-sub">Required as prerequisite license</div>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="../index-v2-draft.html#contact" class="btn btn-primary">License C-01</a>
+      <a href="../index-v2-draft.html#contact" class="btn btn-secondary">Request detail packet</a>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT C-01 IS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">What it is</div>
+    <h2>Compliance architecture, not a compliance program.</h2>
+    <p class="section-lede">C-01 is a reference architecture for systems that touch the Bulk Electric System. It tells you where CIP controls live in your architecture, how to categorize BES Cyber Assets defensibly, how to handle BCSI without leaking it through audit logs, and how to design evidence collection so a CIP auditor can complete a sample test without a forensic exercise.</p>
+    <p>C-01 does not run the program. It does not perform the categorization for you. It defines the architecture-level patterns that make compliance work tractable instead of perpetual scramble.</p>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">What's inside</div>
+    <h2>Six components in the bundle</h2>
+    <p class="section-lede">Each component is delivered as a structured artifact — ArchiMate views, control-mapping spreadsheets, evidence-design documents — sized to be reviewed by a CIP SME and adopted by an architecture team without translation.</p>
+
+    <table class="components-table">
+      <thead>
+        <tr><th></th><th>Component</th><th>Description</th><th>Format</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">01</td>
+          <td class="name">CIP-002 → CIP-014 control-to-architecture mapping</td>
+          <td>Every CIP standard mapped to the architectural element(s) that have to exist to satisfy the requirement. Reviewed against the latest CIP version.</td>
+          <td class="format">Mapping XLSX + ArchiMate views</td>
+        </tr>
+        <tr>
+          <td class="num">02</td>
+          <td class="name">BCSI handling architecture</td>
+          <td>Reference patterns for BCSI at rest, in transit, in use, and in disposal — including the CIP-002 test case (can a CIP-002 evidence sample be ingested without leaving residue on a non-customer system?).</td>
+          <td class="format">Architecture spec + sequence diagrams</td>
+        </tr>
+        <tr>
+          <td class="num">03</td>
+          <td class="name">BES Cyber Asset categorization patterns</td>
+          <td>Decision-tree templates for High / Medium / Low categorization, with the inheritance and aggregation rules made explicit.</td>
+          <td class="format">Decision tree + categorization workbook</td>
+        </tr>
+        <tr>
+          <td class="num">04</td>
+          <td class="name">Evidence collection &amp; retention design</td>
+          <td>Architectural patterns for log capture, evidence packaging, retention windows, and audit-export workflows. Designed for sample-based audit testing, not bulk dumps.</td>
+          <td class="format">Architecture spec + evidence schema</td>
+        </tr>
+        <tr>
+          <td class="num">05</td>
+          <td class="name">NIST CSF + IEC 62443 cross-references</td>
+          <td>Crosswalk between NERC CIP requirements and NIST CSF / IEC 62443 controls — useful for utilities running an overlay program or comparing maturity.</td>
+          <td class="format">Mapping XLSX + commentary PDF</td>
+        </tr>
+        <tr>
+          <td class="num">06</td>
+          <td class="name">Audit-defensible documentation templates</td>
+          <td>Document templates and ArchiMate views formatted to satisfy auditor sample requests on first delivery. Reduces the back-and-forth that consumes most audit cost.</td>
+          <td class="format">Template package + naming standard</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PROBLEM / BOUNDARY -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Problem &amp; boundary</div>
+    <h2>What C-01 solves — and what stays in your hands.</h2>
+
+    <div class="dual-block">
+      <div class="dual-col">
+        <h3>What C-01 solves</h3>
+        <p>CIP compliance is run as a perpetual project at most utilities because the architectural patterns that should make it routine were never formalized. C-01 formalizes them.</p>
+        <ul>
+          <li>BCSI leaks through audit logs because evidence-collection design wasn't done.</li>
+          <li>Categorization disagreements between IT, OT, and compliance because the inheritance rules live in someone's head.</li>
+          <li>Audit findings on documentation completeness because templates differ across teams.</li>
+          <li>Architectural drift between CIP scope and reality because there's no living model of what's in scope.</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>What C-01 deliberately excludes</h3>
+        <p>C-01 is the architecture. It is not the program, the implementation, or the certification.</p>
+        <ul>
+          <li>Performing the BES Cyber Asset categorization for your assets (you do this, using the templates).</li>
+          <li>Running your CIP program day-to-day or staffing your CIP SMEs.</li>
+          <li>Implementing the technical controls themselves (firewall config, IAM, patch management).</li>
+          <li>Conducting your CIP audit or representing you to NERC / WECC / SERC / TRE / MRO / NPCC / RF / SPP-RE.</li>
+          <li>Compliance for non-CIP standards (PRC, COM, EOP, IRO, MOD, TOP, etc.) — out of scope for v1.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIP COVERAGE -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">CIP coverage</div>
+    <h2>What's mapped, at what depth</h2>
+    <p class="section-lede">All CIP standards in the current enforceable version are covered. Depth varies by standard — some are predominantly architecture (CIP-005, CIP-007, CIP-010, CIP-011), others are predominantly process (CIP-003, CIP-004). The mapping calls this out explicitly so you know what you're getting.</p>
+
+    <div class="dual-block">
+      <div class="dual-col">
+        <h3>Architecture-heavy (deep coverage)</h3>
+        <ul>
+          <li><strong>CIP-002</strong> — BES Cyber System Categorization</li>
+          <li><strong>CIP-005</strong> — Electronic Security Perimeters</li>
+          <li><strong>CIP-007</strong> — System Security Management</li>
+          <li><strong>CIP-010</strong> — Configuration Change Management &amp; Vulnerability Assessments</li>
+          <li><strong>CIP-011</strong> — Information Protection (BCSI)</li>
+          <li><strong>CIP-013</strong> — Supply Chain Risk Management</li>
+          <li><strong>CIP-014</strong> — Physical Security (architecture interface only)</li>
+        </ul>
+      </div>
+      <div class="dual-col">
+        <h3>Process-heavy (touch coverage)</h3>
+        <ul>
+          <li><strong>CIP-003</strong> — Security Management Controls</li>
+          <li><strong>CIP-004</strong> — Personnel &amp; Training</li>
+          <li><strong>CIP-006</strong> — Physical Security of BES Cyber Systems</li>
+          <li><strong>CIP-008</strong> — Incident Reporting and Response Planning</li>
+          <li><strong>CIP-009</strong> — Recovery Plans for BES Cyber Systems</li>
+          <li><strong>CIP-012</strong> — Communications between Control Centers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPENDENCIES -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Dependency</div>
+    <h2>C-01 requires F-01 as a prerequisite</h2>
+
+    <div class="deps-block">
+      <div class="deps-diagram">              F-01 · Meta-Model Foundation
+                          │
+                          │  (prerequisite)
+                          │
+              C-01 · NERC CIP Compliance Pack
+                       (this product)
+                          │
+              ┌───────────┼───────────┐
+              │           │           │
+         Categorization  BCSI    Evidence
+            patterns   handling  collection</div>
+      <div class="deps-note"><strong>License logic:</strong> a customer licensing C-01 alone implicitly licenses F-01 — they receive both bundles. The combined mid-tier price is $37K – $53K license + $7.4K – $10.6K annual maintenance. Customers already licensing F-01 add C-01 at the C-01 list price.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Pricing by tier</div>
+    <h2>How C-01 prices across organization sizes</h2>
+    <p class="section-lede">CIP applies asymmetrically — a small BES-registered entity has the same CIP exposure as a large IOU per asset, but typically fewer assets. The tier multipliers reflect organization size, not CIP scope. Larger entities with more in-scope assets get more value but pay the same multiplier.</p>
+
+    <table class="tier-table-full">
+      <thead>
+        <tr><th>Tier</th><th>Org size</th><th>Multiplier</th><th>License price</th><th>Annual maint. (20%)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tier-name">Small</td>
+          <td>&lt;100K customers, small public power</td>
+          <td class="mult">0.6×</td>
+          <td class="price">$15,000 – $21,000</td>
+          <td class="price">$3,000 – $4,200</td>
+        </tr>
+        <tr class="listed">
+          <td class="tier-name">Mid (listed)</td>
+          <td>100K – 1M customers</td>
+          <td class="mult">1.0×</td>
+          <td class="price">$25,000 – $35,000</td>
+          <td class="price">$5,000 – $7,000</td>
+        </tr>
+        <tr>
+          <td class="tier-name">Large</td>
+          <td>&gt;1M customers, ISO/RTO, federal power</td>
+          <td class="mult">1.5×</td>
+          <td class="price">$37,500 – $52,500</td>
+          <td class="price">$7,500 – $10,500</td>
+        </tr>
+        <tr>
+          <td class="tier-name">Consultancy / Reseller</td>
+          <td>Use-on-multiple-clients license</td>
+          <td class="mult">2.5× + 5%</td>
+          <td class="price">$62,500 – $87,500</td>
+          <td class="price">$12,500 – $17,500</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 14px; color: var(--muted); margin-top: 20px;">F-01 prerequisite is invoiced alongside C-01 if not already licensed. Bundled invoicing supported.</p>
+  </div>
+</section>
+
+<!-- BUNDLE -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Delivery</div>
+    <h2>What ships in the C-01 bundle</h2>
+
+    <ul class="bundle-list">
+      <li>C-01-control-mapping-v1.0.xlsx
+        <span class="desc">Every CIP requirement mapped to architectural elements</span></li>
+      <li>C-01-bcsi-handling-architecture-v1.0.pdf
+        <span class="desc">BCSI at rest / in transit / in use / in disposal, with the CIP-002 test case</span></li>
+      <li>C-01-bcsi-sequence-diagrams-v1.0/
+        <span class="desc">Reference flows for the most common BCSI lifecycle scenarios</span></li>
+      <li>C-01-categorization-decision-tree-v1.0.{pdf, xlsx}
+        <span class="desc">High / Medium / Low categorization with inheritance rules</span></li>
+      <li>C-01-evidence-collection-design-v1.0.pdf
+        <span class="desc">Log capture, evidence packaging, retention, audit-export workflows</span></li>
+      <li>C-01-evidence-schema-v1.0.json
+        <span class="desc">Structured schema for evidence artifacts</span></li>
+      <li>C-01-nist-csf-iec62443-crosswalk-v1.0.xlsx
+        <span class="desc">Mapping to NIST CSF and IEC 62443 control sets</span></li>
+      <li>C-01-audit-documentation-templates-v1.0/
+        <span class="desc">Templates and ArchiMate views formatted for auditor consumption</span></li>
+      <li>C-01-bcsi-addendum-v1.0.pdf
+        <span class="desc">License addendum naming the studio's BCSI handling commitments</span></li>
+      <li>C-01-license.pdf + C-01-changelog-v1.0.md
+        <span class="desc">License agreement and version history</span></li>
+    </ul>
+    <p style="font-size: 14px; color: var(--muted); margin-top: 24px;">90 days of email support during onboarding, access to private quarterly release notes including regulatory updates, and the annual-maintenance update stream.</p>
+  </div>
+</section>
+
+<!-- OPEN QUESTIONS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Build status &amp; open questions</div>
+    <h2>What's still being decided</h2>
+
+    <ul class="questions-list">
+      <li>
+        <strong>Upper-band pricing</strong>
+        Listed band is $25K – $35K. The Customer Voice and Skeptical Utility CIO disagree on whether the top of the band is conservative given the budget category this hits. First three live conversations resolve it.
+      </li>
+      <li>
+        <strong>CIP-014 architecture coverage</strong>
+        Physical security has a narrow architecture interface (CCTV, access control, intrusion detection). v1 covers the interface only; the question is whether v1.1 should extend deeper.
+      </li>
+      <li>
+        <strong>NIST CSF crosswalk completeness</strong>
+        Full crosswalk vs. the subset that most utilities run as overlay. Trade-off: completeness signals seriousness vs. shipping speed.
+      </li>
+      <li>
+        <strong>Supply chain (CIP-013) depth</strong>
+        Architecture patterns for supply-chain risk vs. process documentation only. Leaning toward architecture patterns with explicit handoff to procurement.
+      </li>
+      <li>
+        <strong>WECC / SPP-RE / TRE regional variations</strong>
+        Regional Entity-specific interpretation differences across CIP. Ship a baseline in v1 with explicit "RE-specific guidance" sections to be expanded in v1.1.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Pairs well with</div>
+    <h2>Related SKUs</h2>
+    <div class="related-grid">
+      <a class="related-card" href="f-01.html">
+        <div class="rc-id">F-01</div>
+        <div class="rc-name">Meta-Model Foundation</div>
+        <div class="rc-desc">Required prerequisite. Provides the architectural scaffolding C-01 layers compliance overlays onto.</div>
+      </a>
+      <a class="related-card" href="t-01.html">
+        <div class="rc-id">T-01</div>
+        <div class="rc-name">Transmission Operations</div>
+        <div class="rc-desc">Pairs naturally with C-01 for transmission owners — T-01's OT/IT seam is built with CIP overlay in mind.</div>
+      </a>
+      <a class="related-card" href="ai-add-on.html">
+        <div class="rc-id">B-01 + B-02</div>
+        <div class="rc-name">AI add-on</div>
+        <div class="rc-desc">The Compliance Control Mapping Check prompt is the most-used AI prompt for C-01 customers.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <h3>License C-01</h3>
+      <p>Email the studio with your organization's tier, your BES registration status (if applicable), and any procurement specifics. The BCSI handling addendum is included in the standard license package — reviewable before signing.</p>
+      <div class="hero-ctas">
+        <a href="../index-v2-draft.html#contact" class="btn btn-primary">Inquire about C-01</a>
+        <a href="../index-v2-draft.html#faq" class="btn btn-secondary">BCSI handling FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-row">
+      <div>&copy; 2026 TURNING POINT STUDIO LLC &middot; Oregon SOS #257142696</div>
+      <div class="footer-links">
+        <a href="../index-v2-draft.html#catalog">Catalog</a>
+        <a href="../index-v2-draft.html#process">Licensing</a>
+        <a href="../index-v2-draft.html#faq">FAQ</a>
+        <a href="../index-v2-draft.html#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
